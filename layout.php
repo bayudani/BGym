@@ -117,10 +117,9 @@
 
   </style>
 
-  <script src="assets/library/jquery.min.js"></script>
-  <script src="../dist/components/visibility.js"></script>
-  <script src="../dist/components/sidebar.js"></script>
-  <script src="../dist/components/transition.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <script src="./asset/fomantic/dist/components/sidebar.js"></script>
+  <script src="./asset/fomantic/dist/components/transition.js"></script>
   <script>
   $(document)
     .ready(function() {
