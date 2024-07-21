@@ -1,0 +1,238 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden.menu {
+    display: none;
+}
+
+.masthead.segment {
+    min-height: 700px;
+    padding: 1em 0em;
+}
+
+.masthead .logo.item img {
+    margin-right: 1em;
+}
+
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+    margin-top: 3em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+}
+
+.masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+.ui.vertical.stripe {
+    padding: 8em 0em;
+}
+
+.ui.vertical.stripe h3 {
+    font-size: 2em;
+}
+
+.ui.vertical.stripe .button+h3,
+.ui.vertical.stripe p+h3 {
+    margin-top: 3em;
+}
+
+.ui.vertical.stripe .floated.image {
+    clear: both;
+}
+
+.ui.vertical.stripe p {
+    font-size: 1.33em;
+}
+
+.ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0em;
+}
+
+.quote.stripe.segment {
+    padding: 0em;
+}
+
+.quote.stripe.segment .grid .column {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.footer.segment {
+    padding: 5em 0em;
+}
+
+.secondary.pointing.menu .toc.item {
+    display: none;
+}
+
+/* .hero{
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230613/pngtree-black-and-white-gym-room-with-a-row-of-equipment-image_2911173.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+} */
+
+.ui.segment.program {
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230613/pngtree-black-and-white-gym-room-with-a-row-of-equipment-image_2911173.jpg");
+    height: 255px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-bold {
+    font-family: "Anybody", sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+}
+.head_program{
+    margin-top: 10px;
+    font-size: 24px;
+    font-family: "Anybody";
+    text-transform: capitalize;
+}
+.custom1 {
+    position: absolute;
+    z-index: 2;
+}
+
+.custom2 {
+    top: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+.custom5 {
+    padding: 5px 5px 15px 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative;
+}
+
+.custom5 p {
+    color: rgb(0, 0, 0);
+    display: none;
+    transition: all 0.6s ease-out;
+    /* transform: scale(40%); */
+}
+
+.custom5:hover p {
+    display: block;
+    /* position: absolute; */
+    text-align: center;
+    bottom: -20px;
+    transition-duration: 2s;
+}
+
+/* .ui.segment.card-custom:hover {
+    background-color: #f14a2d;
+    font-weight: normal;
+    color: #ffff;
+} */
+.ui.fluid.image {
+    font-size: 15px;
+}
+
+.custom2 .anchor {
+    text-decoration: none;
+}
+
+.custom2 .icon {
+    font-size: 45px;
+    color: #eb5b00;
+}
+
+.font1 {
+    font-family: "Anybody", sans-serif;
+}
+
+.ui.inverted.header.font1 {
+    font-family: "Anybody", sans-serif;
+    font-weight: bold;
+}
+
+.span {
+    color: #eb5b00;
+}
+
+.eight.wide.column {
+    text-align: start;
+}
+
+.ui.header.font2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    color: #eb5b00;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    width: 300px;
+}
+
+@media only screen and (max-width: 700px) {
+    .ui.fixed.menu {
+        display: none !important;
+    }
+
+    .secondary.pointing.menu .item,
+    .secondary.pointing.menu .menu {
+        display: none;
+    }
+
+    .secondary.pointing.menu .toc.item {
+        display: block;
+    }
+
+    .masthead.segment {
+        min-height: 350px;
+    }
+
+    .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+    }
+
+    .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+    }
+
+    .custom2.ui.three.column.stackable.grid {
+        top: -20px;
+        display: none;
+    }
+}
