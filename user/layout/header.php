@@ -15,23 +15,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 
-    <link rel="stylesheet" href="../asset/bootstrap.min.css">
-     <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/reset.css">
+    <link rel="stylesheet" href="../../asset/bootstrap/bootstrap.min.css">
+    <!-- fomantic -->
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/container.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/header.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/image.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/menu.css">
 
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/container.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/header.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/image.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/menu.css">
-
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/button.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/list.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/icon.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/sidebar.css">
-    <link rel="stylesheet" type="text/css" href="../asset/fomantic/dist/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/button.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/list.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/transition.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/modal.css">
+    <link rel="stylesheet" type="text/css" href="../../asset/fomantic/dist/components/accordion.css">
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,55 +41,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- css external -->
-    <link rel="stylesheet" href="../asset/style.css">
+    <link rel="stylesheet" href="../../asset/style.css">
     <!-- swipper js -->
-    <link rel="stylesheet" href="../asset/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../asset/bootstrap-bundle.min.js" />
+    <!-- <link rel="stylesheet" href="../asset/swiper/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="../../asset/swiper/swiper-bundle.min.css">
+
+    <script src="../../asset/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="../asset/fomantic/dist/components/visibility.js"></script>
-    <script src="../asset/fomantic/dist/components/sidebar.js"></script>
-    <script src="../asset/fomantic/dist/components/transition.js"></script>
+    <script src="../../asset/fomantic/dist/components/visibility.js"></script>
+    <script src="../../asset/fomantic/dist/components/sidebar.js"></script>
+    <script src="../../asset/fomantic/dist/components/transition.js"></script>
+    <script src="../../asset/fomantic/dist/components/modal.js"></script>
+    <script src="../../asset/fomantic/dist/components/accordion.js"></script>
     <!-- swipper js -->
-    <script src="../asset/swiper-bundle.min.js"></script>
-
-    <script>
-        $(document)
-            .ready(function() {
-
-                // fix menu when passed
-                $('.masthead')
-                    .visibility({
-                        once: false,
-                        onBottomPassed: function() {
-                            $('.fixed.menu').transition('fade in');
-                        },
-                        onBottomPassedReverse: function() {
-                            $('.fixed.menu').transition('fade out');
-                        }
-                    });
-
-                // create sidebar and attach to menu open
-                $('.ui.sidebar')
-                    .sidebar('attach events', '.toc.item');
-
-            });
-
-        // swiper
-        
-        var swiper = new Swiper(".mySwiper", {
-            pagination: {
-                el: ".swiper-pagination",
-                type: "progressbar",
-
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-
-        
-    </script>
+    <!-- <script src="../asset/swiper/swiper-bundle.min.js"></script> -->
+    <script src="../../asset/swiper/swiper-bundle.min.js"></script>
+    <script src="../../asset/script.js"></script>
+    
 
 </head>
 
@@ -102,13 +72,15 @@
             <a href="header.php?page=artikel" class="item">Artikel</a>
             <div class="right menu">
                 <div class="item">
-                    <a class="ui button">Log in</a>
+                    <button class="ui button" id="showModalButton" data-bs-toggle="modal" data-bs-target="#exampleModal">Log in</button>
+
                 </div>
                 <div class="item">
                     <a class="ui primary button">Sign Up</a>
                 </div>
             </div>
         </div>
+
     </div>
 
     <!-- Sidebar Menu -->
@@ -117,7 +89,7 @@
         <a href="header.php?page=produk" class="item">Produk</a>
         <a href="header.php?page=membership" class="item">Membership</a>
         <a href="header.php?page=artikel" class="item">Artikel</a>
-        <a class="item">Login</a>
+        <a class="item" id="showModalButton" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
         <a class="item">Signup</a>
     </div>
 
@@ -135,7 +107,7 @@
                     <a href="header.php?page=membership" class="item">Membership</a>
                     <a href="header.php?page=artikel" class="item">Artikel</a>
                     <div class="right item">
-                        <a class="ui inverted button">Log in</a>
+                        <a class="ui inverted button" id="showModalButton" data-bs-toggle="modal" data-bs-target="#exampleModal">Log in</a>
                         <a class="ui inverted button">Sign Up</a>
                     </div>
                 </div>
@@ -166,6 +138,38 @@
             ?>
         </div>
 
+        <!-- modal -->
+        <!-- Modal Login -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content text-bg-dark">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="col-form-label">Username:</label>
+                                <input type="text" class="form-control text-bg-dark" id="username" name="username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="col-form-label">Password</label>
+                                <input class="form-control text-bg-dark" type="password" id="password" name="password"></input>
+                            </div>
+                            <button type="button" class="btn btn-primary form-control">Login</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="register">Belum memiliki akun?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- footer -->
         <div class="ui inverted vertical footer segment">
             <div class="ui container">
                 <div class="ui stackable inverted divided equal height stackable grid">
@@ -195,10 +199,6 @@
             </div>
         </div>
     </div>
-
-
-
-
 </body>
 
 </html>

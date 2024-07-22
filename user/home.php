@@ -11,7 +11,7 @@
     <title>Homepage - Semantic</title>
 
 
-    <link rel="stylesheet" href="../asset/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../asset/swiper/swiper-bundle.min.css">
 
 </head>
 
@@ -20,35 +20,13 @@
 
     <!-- Page Contents -->
     <div class="pusher">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="ui vertical masthead center aligned segment custom1 swiper-slide">
-                    <div class="ui inverted container     ">
-                        <h1 class=" ui inverted header font1">
-                            Welcome to BroGym
-                        </h1>
-                        <h2 class="text-secondary ">Bangun Badan Impianmu di <span class="span">BroGym</span></h2>
-                        <div class="ui huge btn btn-danger button mt-3">Join Membership<i class="right arrow icon"></i></div>
-                    </div>
-                </div>
-                <div class="ui vertical masthead center aligned segment custom1 swiper-slide">
-                    <div class="ui inverted container     ">
-                        <h1 class=" ui inverted header font1">
-                            Welcome to BroGym
-                        </h1>
-                        <h2 class="text-secondary ">Bangun Badan Impianmu di <span class="span">BroGym</span></h2>
-                        <div class="ui huge btn btn-danger button mt-3">Join Membership<i class="right arrow icon"></i></div>
-                    </div>
-                </div>
-                <div class="ui vertical masthead center aligned segment custom1 swiper-slide">
-                    <div class="ui inverted container     ">
-                        <h1 class=" ui inverted header font1">
-                            Welcome to BroGym
-                        </h1>
-                        <h2 class="text-secondary ">Bangun Badan Impianmu di <span class="span">BroGym</span></h2>
-                        <div class="ui huge btn btn-danger button mt-3">Join Membership<i class="right arrow icon"></i></div>
-                    </div>
-                </div>
+        <div class="ui vertical masthead center aligned segment custom1">
+            <div class="ui inverted container">
+                <h1 class=" ui inverted header font1">
+                    Welcome to BroGym
+                </h1>
+                <h2 class="text-secondary ">Bangun Badan Impianmu di <span class="span">BroGym</span></h2>
+                <div class="ui huge btn btn-danger button mt-3">Join Membership<i class="right arrow icon"></i></div>
             </div>
         </div>
         <!-- card -->
@@ -56,7 +34,9 @@
             <div class="column">
                 <div class="ui  segment card-custom">
                     <a href="https://google.com" class="ui fluid image text-dark anchor">
-                        <i class="fa-light fa-dumbbell icon"></i>
+                        <!-- <i class="fa-light fa-dumbbell icon"></i> -->
+                        <img class="image_custom" src="../../asset/img/6.png" alt="gambar">
+
                         <h5 class="mt-2">Alat yang lenkap</h5>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis iure soluta unde ad, accusantium quibusdam explicabo inventore atque excepturi.</p>
                     </a>
@@ -66,7 +46,9 @@
             <div class="column">
                 <div class="ui  segment card-custom ">
                     <a href="https://google.com" class="ui fluid image text-dark anchor">
-                        <i class="bi bi-people icon"></i>
+                        <!-- <i class="bi bi-people icon"></i> -->
+                        <img class="image_custom" src="../../asset/img/8.png" alt="gambar">
+
                         <h5 class="mt-2">Komunitas yang solid</h5>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis iure soluta unde ad, accusantium quibusdam explicabo inventore atque excepturi.</p>
                     </a>
@@ -74,9 +56,10 @@
             </div>
 
             <div class="column">
-                <div class="ui  segment card-custom">
+                <div class="ui segment card-custom">
                     <a href="https://google.com" class="ui fluid image text-dark anchor">
-                        <i class="fa-light fa-dumbbell icon"></i>
+                        <!-- <i class="fa-light fa-dumbbell icon"></i> -->
+                        <img class="image_custom" src="../../asset/img/3.png" alt="gambar">
                         <h5 class="mt-2">Tempat yang nyaman</h5>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis iure soluta unde ad, accusantium quibusdam explicabo inventore atque excepturi.</p>
                     </a>
@@ -95,10 +78,18 @@
                     <div class="six wide right floated column p-4">
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
-                                <img src="https://assets.unileversolutions.com/v1/64566700.jpg" class="swiper-slide ui big bordered rounded  image ">
-                                <img src="https://assets.unileversolutions.com/v1/64566700.jpg" class="swiper-slide ui big bordered rounded image ">
-                                <img src="https://assets.unileversolutions.com/v1/64566700.jpg" class="swiper-slide ui big bordered rounded image ">
-                                <img src="https://assets.unileversolutions.com/v1/64566700.jpg" class="swiper-slide ui big bordered rounded  image ">
+                                <div class="swiper-slide">
+                                    <img src="https://assets.unileversolutions.com/v1/64566700.jpg" class="ui big bordered rounded  image ">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://assets.unileversolutions.com/v1/64566700.jpg" class="ui big bordered rounded  image ">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://assets.unileversolutions.com/v1/64566700.jpg" class="ui big bordered rounded  image ">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://assets.unileversolutions.com/v1/64566700.jpg" class="ui big bordered rounded  image ">
+                                </div>
                             </div>
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
@@ -150,7 +141,7 @@
                     <p>Selengkapnya</p>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -168,21 +159,109 @@
         </div>
     </div>
 
+    <!-- membership -->
+    <div class="ui vertical stripe quote segment mt-3 mb-3 text-white">
+        <h4 class="head_program">Pilih program latihan anda</h4>
+        <div class=" ui three column stackable grid custom  mx-5">
+            <div class="column program">
+                <div class="custom5">
+                    <div class="ui  segment program">
+                        <a href="https://google.com" class="ui fluid image text-light anchor">
+                            <h4 class="text-bold">FULL BODY</h4>
+                        </a>
+                    </div>
+                    <p>Selengkapnya</p>
+                </div>
+            </div>
+            <div class="column program">
+                <div class="custom5">
+                    <div class="ui  segment program">
+                        <a href="https://google.com" class="ui fluid image text-light anchor">
+                            <h4 class="text-bold">FULL BODY</h4>
+                        </a>
+                    </div>
+                    <p>Selengkapnya</p>
+                </div>
+            </div>
+            <div class="column program">
+                <div class="custom5">
+                    <div class="ui  segment program">
+                        <a href="https://google.com" class="ui fluid image text-light anchor">
+                            <h4 class="text-bold">FULL BODY</h4>
+                        </a>
+                    </div>
+                    <p>Selengkapnya</p>
+                </div>
+            </div>
 
+        </div>
+    </div>
+
+    <!-- faq -->
+    <div class="ui segment">
+        <div class="ui two column very relaxed grid">
+            <div class="column">
+                <h5>Faq</h5>
+                <p>Frequently Asked Questions</p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+            <div class="column">
+                <div class="ui accordion">
+                    <div class="active title">
+                        <i class="dropdown icon"></i>
+                        What is a dog?
+                    </div>
+                    <div class="active content">
+                        <p>A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        What kinds of dogs are there?
+                    </div>
+                    <div class="content">
+                        <p>There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        How do you acquire a dog?
+                    </div>
+                    <div class="content">
+                        <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
+                        <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good home to a dog who may not find one so readily.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui vertical divider">
+
+        </div>
+    </div>>
 
     </div>
 
 
 
     <!-- Swiper JS -->
-    <script src="../asset/swiper-bundle.min.js"></script>
+    <script src="../../asset/swiper/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
             pagination: {
                 el: ".swiper-pagination",
-                type: "progressbar",
             },
             navigation: {
                 nextEl: ".swiper-button-next",

@@ -100,22 +100,38 @@ a {
     font-family: "Anybody", sans-serif;
     font-weight: 800;
     font-size: 34px;
+    padding: 30px 10px 30px 10px;
+    background-color: rgba(134, 143, 148, 0.245);
+    filter: blur(100%);
 }
-.head_program{
+
+.head_program {
     margin-top: 10px;
     font-size: 24px;
     font-family: "Anybody";
     text-transform: capitalize;
 }
+
 .custom1 {
     position: absolute;
     z-index: 2;
+
 }
 
 .custom2 {
     top: 70px;
     position: relative;
     z-index: 1;
+
+}
+
+.bac {
+    display: inline-block;
+    width: 300%;
+    padding: 100px;
+    background-color: #070707;
+    z-index: 1;
+    position: absolute;
 }
 
 .custom5 {
@@ -146,6 +162,10 @@ a {
     color: #ffff;
 } */
 .ui.fluid.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-size: 15px;
 }
 
@@ -181,26 +201,34 @@ a {
     color: #eb5b00;
 }
 
+.ui.vertical.masthead.center.aligned.segment {
+    background: url("./img/background.png") !important;
+    background-size: cover;
+}
+
+.ui.fluid.image img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+}
+
 .swiper {
     width: 100%;
-    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
 }
 
 .swiper-slide img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    width: 300px;
 }
 
 @media only screen and (max-width: 700px) {
