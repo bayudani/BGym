@@ -304,22 +304,22 @@
 
   <div class="center aligned row">
 
-                <div class="column">
-                    <div class="ui  segment card-custom program">
-                        <a href="https://google.com" class="ui medium image">
-                            <img src="/images/wireframe/image-text.png">
-                        </a>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="ui  segment card-custom program">
-                        <a href="https://google.com" class="ui medium image">
-                            <img src="/images/wireframe/image-text.png">
-                        </a>
-                    </div>
-                </div>
-                
-            </div>
+    <div class="column">
+      <div class="ui  segment card-custom program">
+        <a href="https://google.com" class="ui medium image">
+          <img src="/images/wireframe/image-text.png">
+        </a>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui  segment card-custom program">
+        <a href="https://google.com" class="ui medium image">
+          <img src="/images/wireframe/image-text.png">
+        </a>
+      </div>
+    </div>
+
+  </div>
 </body>
 
 </html>

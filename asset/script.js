@@ -2,9 +2,8 @@ $(document).ready(function () {
     // fix menu when passed
 
     // accordion
-    $('.ui.accordion')
-  .accordion();
-  
+    $(".ui.accordion").accordion();
+
     $(".masthead").visibility({
         once: false,
         onBottomPassed: function () {
@@ -17,6 +16,11 @@ $(document).ready(function () {
 
     // create sidebar and attach to menu open
     $(".ui.sidebar").sidebar("attach events", ".toc.item");
+    
+    // modal
+    
+    
+  
 });
 
 // swiper
@@ -32,8 +36,17 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-
-
-    // accordion
-    $('.ui.accordion')
-  .accordion();
+function fnView() {
+    const passwordField = document.getElementById("password");
+    const eyeIcon = document.getElementById("btnView");
+  
+    if (passwordField.value.length > 0 && passwordField.type === "password") {
+      passwordField.type = "text";
+      eyeIcon.innerHTML = '<i class="fa-regular fa-eye"></i>';
+      eyeIcon.title = 'sembunyikan password';
+    } else {
+      passwordField.type = "password";
+      eyeIcon.innerHTML = '<i class="fa-regular fa-eye-slash"></i>';
+      eyeIcon.title = 'lihat password';
+    }
+  }

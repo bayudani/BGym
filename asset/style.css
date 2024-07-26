@@ -113,16 +113,17 @@ a {
 }
 
 .custom1 {
-    position: absolute;
-    z-index: 2;
-
+    position: relative;
+    z-index: 1;
 }
 
 .custom2 {
-    top: 70px;
-    position: relative;
-    z-index: 1;
-
+    top: 37em;
+    position: absolute;
+    z-index: 2;
+}
+.ui.vertical.stripe.segment.bg-white.custom3{
+    margin-top: 70px;
 }
 
 .bac {
@@ -204,6 +205,7 @@ a {
 .ui.vertical.masthead.center.aligned.segment {
     background: url("./img/background.png") !important;
     background-size: cover;
+    /* position:absolute; */
 }
 
 .ui.fluid.image img {
@@ -211,6 +213,24 @@ a {
     align-items: center;
     justify-content: center;
     width: 80px;
+}
+
+.text-secondary.modal_custom {
+    cursor: pointer;
+}
+
+.pw {
+    position: relative;
+}
+
+.pw .btnView {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    top: 45px;
 }
 
 .swiper {
