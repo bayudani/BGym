@@ -1,23 +1,3 @@
-
-<div class="container">
-    <h2>Login</h2>
-    <?php if (isset($_SESSION['error'])): ?>
-        <div class="alert alert-danger"><?php echo $_SESSION['error']; ?></div>
-        <?php unset($_SESSION['error']); ?>
-    <?php endif; ?>
-    <form method="post" action="index.php?action=login">
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" name="password" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
-</div>
-
 <?php
 // session_start();
 ?>
@@ -32,7 +12,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./asset/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="./asset/script.js"></script> -->
     <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
 </head>
 
@@ -41,7 +23,7 @@
     <!-- Section: Design Block -->
     <section class="text-center">
         <!-- Background image -->
-        <div class="p-5 bg-image"  style="
+        <div class="p-5 bg-image" style="
         background-image: url('./asset/img/background.png');
         height: 300px;
         "></div>
@@ -50,15 +32,14 @@
         <div class="card mx-4 mx-md-5 shadow-5-strong " style="
         margin-top: -100px;
         backdrop-filter: blur(30px);
-        " >
+        ">
             <div class="card-body py-5 px-md-5">
-                <?php if (isset($_SESSION['error'])) : ?>
-                    <div class="alert alert-danger"><?php echo $_SESSION['error']; ?></div>
-                    <?php unset($_SESSION['error']); ?>
-                <?php endif; ?>
+
                 <div class="row d-flex justify-content-center ">
                     <div class="col-lg-8">
-                        <h2 class="fw-bold mb-5">Sign up now</h2>
+                        <a href="index.php">
+                            <h2 class="fw-bold mb-5 text-black">Login</h2>
+                        </a>
                         <form method="post" action="index.php?action=login">
 
                             <!-- username -->
@@ -68,15 +49,18 @@
                             </div>
 
                             <!-- password input -->
-                            <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="password" id="password" class="form-control" name="password" />
+                            <div data-mdb-input-init class="pw form-outline mb-4">
+                                <input type="password" id="pass" class="form-control" name="password" />
                                 <label class="form-label" for="password">Password</label>
+                                <!-- <button type="button" class="btnView" id="btnView" title="lihat password" onclick="fnView()">
+                                    <i class="fa-regular fa-eye-slash"></i>
+                                </button> -->
                             </div>
 
 
                             <!-- Submit button -->
                             <button type="submit" class="btn btn-primary btn-block mb-4">
-                                Register
+                                Login
                             </button>
 
                             <!-- Register buttons -->
@@ -95,33 +79,37 @@
     <!-- Section: Design Block -->
 
 
-   
 
-    <?php if (@$_SESSION['berhasil']) { ?>
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'yeay',
-                text: 'cek email verfikikasi',
-            })
-        </script>
-    <?php unset($_SESSION['berhasil']);
-    } ?>
 
-    <!-- MDB -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
-</body>
-
-</html>
-
-<?php if (@$_SESSION['error']) { ?>
+    <?php if (@$_SESSION['error']) { ?>
         <script>
             Swal.fire({
                 icon: 'error',
-                title: 'Gagal',
-                text: 'Username atau password salah',
+                title: 'Oops!!',
+                text: '<?php echo $_SESSION['error']; ?>',
             })
         </script>
     <?php unset($_SESSION['error']);
     } ?>
 
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
+    <script>
+        function fnView() {
+            const passwordField = document.getElementById("pass");
+            const eyeIcon = document.getElementById("btnView");
+
+            if (passwordField.value.length > 0 && passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.innerHTML = '<i class="fa-regular fa-eye"></i>';
+                eyeIcon.title = 'sembunyikan password';
+            } else {
+                passwordField.type = "password";
+                eyeIcon.innerHTML = '<i class="fa-regular fa-eye-slash"></i>';
+                eyeIcon.title = 'lihat password';
+            }
+        }
+    </script>
+</body>
+
+</html>

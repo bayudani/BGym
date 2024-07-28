@@ -195,38 +195,18 @@ include './config/koneksi.php'
     <div class="ui vertical stripe quote segment mt-3 mb-3 text-white">
         <h4 class="head_program">Pilih program latihan anda</h4>
         <div class=" ui three column stackable grid custom  mx-5">
-            <?php foreach($produk as $produks) ?>
+            <?php foreach($produk as $produks): ?>
             <div class="column program">
                 <div class="custom5">
                     <div class="ui  segment program">
-                        <a href="https://google.com" class="ui fluid image text-light anchor">
+                        <a href="index.php?action=transaksi&id_produk=<?php echo $produks['id_produk']; ?>" class="ui fluid image text-light anchor">
                             <h4 class="text-bold"><?php echo $produks['nama'];?></h4>
                         </a>
                     </div>
                     <p>Selengkapnya</p>
                 </div>
             </div>
-            <div class="column program">
-                <div class="custom5">
-                    <div class="ui  segment program">
-                        <a href="https://google.com" class="ui fluid image text-light anchor">
-                            <h4 class="text-bold">FULL BODY</h4>
-                        </a>
-                    </div>
-                    <p>Selengkapnya</p>
-                </div>
-            </div>
-            <div class="column program">
-                <div class="custom5">
-                    <div class="ui  segment program">
-                        <a href="https://google.com" class="ui fluid image text-light anchor">
-                            <h4 class="text-bold">FULL BODY</h4>
-                        </a>
-                    </div>
-                    <p>Selengkapnya</p>
-                </div>
-            </div>
-
+            <?php endforeach; ?>
         </div>
     </div>
 
@@ -283,37 +263,16 @@ include './config/koneksi.php'
     <!-- Swiper JS -->
     <script src="/asset/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
+   
+   
 
     
 <?php if (@$_SESSION['berhasil']) { ?>
         <script>
             Swal.fire({
                 icon: 'success',
-                title: 'yeay',
-                text: 'Email telah diverifikasi ,silahkan login',
+                title: 'berhasil',
+                text: '<?php echo $_SESSION['berhasil']?>',
             })
         </script>
     <?php unset($_SESSION['berhasil']);

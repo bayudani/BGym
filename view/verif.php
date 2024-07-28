@@ -7,8 +7,8 @@
     <title>registrasi</title>
 </head>
 <body>
-    <div class="container">
-        <div class="col text-lg-center">
+    <div class="container d-flex align-content-center mt-4">
+        <div class="col text-lg-center card shadow-lg ">
             
             <p>kami telah mengirimkan email verifikasi,silahkan cek email anda <?php ?></p>
         </div>

@@ -60,6 +60,7 @@
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <input type="password" id="Password" class="form-control" name="password" />
                                 <label class="form-label" for="Password">Password</label>
+                                
                             </div>
 
                             <!-- Password input -->

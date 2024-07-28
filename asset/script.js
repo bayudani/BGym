@@ -37,7 +37,7 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 function fnView() {
-    const passwordField = document.getElementById("password");
+    const passwordField = document.getElementById("pass");
     const eyeIcon = document.getElementById("btnView");
   
     if (passwordField.value.length > 0 && passwordField.type === "password") {

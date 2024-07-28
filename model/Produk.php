@@ -15,7 +15,12 @@ class Produk {
     public function getAllProduk() {
         $query = "SELECT * FROM " . $this->table_name;
         $result = mysqli_query($this->koneksi, $query);
-        return $result;
+        if ($result) {
+            return mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+        }
+        return[];
     }
+
 }
 ?>
