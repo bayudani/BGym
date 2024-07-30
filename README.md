@@ -29,6 +29,7 @@ Berikut adalah langkah-langkah untuk menginstal dan menjalankan proyek ini secar
 
 ### Prasyarat
 Pastikan Anda sudah menginstal:
+- [laragon](https://laragon.org/download/)
 - [PHP](https://www.php.net/downloads)
 - [Composer](https://getcomposer.org/download/)
 - [Node.js](https://nodejs.org/) dan npm
@@ -37,5 +38,5 @@ Pastikan Anda sudah menginstal:
 
 1. **Clone Repository**
    ```sh
-   git clone https://github.com/username/repo.git
-   cd repo
+   git clone https://github.com/bayu dani/BroGym.git
+   
