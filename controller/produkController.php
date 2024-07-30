@@ -1,30 +1,20 @@
 <?php
-// require_once './model/user.php';
 require_once './model/produk.php';
-require_once './config/koneksi.php';
 
-class ProdukController
-{
-    private $produkmodel;
+class ProdukController {
+    private $produkModel;
 
-    public function __construct()
-    {
-        global $koneksi;
-        $this->produkmodel = new Produk($koneksi);
-    }
-    public function getProduk(){
-        return $this->produkmodel->getAllProduk();
-        
-        // include './layout/header.php';
-    }
-    
-    // transaksi
-    public function showFormTransaksi($koneksi){
-
+    public function __construct($koneksi) {
+        $this->produkModel = new Produk($koneksi);
     }
 
-    public function prosesTransaksi(){
-        
+    public function getAllProduk() {
+        return $this->produkModel->getAllProduk();
+    }
+
+    public function showFormTransaksi($id_produk) {
+        $produk = $this->produkModel->getProdukById($id_produk);
+        include './view/transaksi.php';
     }
 }
 ?>

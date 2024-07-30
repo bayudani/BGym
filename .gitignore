@@ -1,3 +1,5 @@
 node_modules/
 config/midtrans-config.php
 model/user.php
+package-lock.json
+vendor/

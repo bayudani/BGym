@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/bayudani/BroGym#readme",
   "dependencies": {
-    "fomantic-ui": "^2.9.4-beta.64"
+    "flowbite": "^2.4.1"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7"
   }
 }

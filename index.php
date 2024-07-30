@@ -1,11 +1,13 @@
 <?php
 session_start();
 require_once './config/koneksi.php';
+require_once './config/midtrans-config.php';
 require_once './controller/userController.php';
 require_once './controller/produkController.php';
-require_once './controller/produkController.php';
+require_once './controller/transaksiController.php';
 
-
+$produkController = new ProdukController($koneksi);
+$transaksiController = new TransaksiController($koneksi);
 // parameter action 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 $code = isset($_GET['code']) ? $_GET['code'] : '';
@@ -55,20 +57,22 @@ switch ($action) {
         $controller = new UserController($koneksi);
         $controller->verfiy($code);
         break;
-    // case 'product & transaksi':
+        // case 'product & transaksi':
     case 'transaksi':
-        $controller = new ProdukController($koneksi);
-        $controller->showFormTransaksi($_GET['id_produk']);
+        if (isset($_GET['id_produk'])) {
+            $id_produk = $_GET['id_produk'];
+            $produkController->showFormTransaksi($id_produk);
+        }
         break;
     case 'prosesTransaksi':
-        $controller = new ProdukController($koneksi);
-        $controller->prosesTransaksi($_POST['id_produk'],$_POST['nama_lengkap'],$_POST['alamat'],$_POST['no_hp']);
+        $controller = new TransaksiController($koneksi);
+        $controller->prosesTransaksi($_POST['id_produk'], $_POST['nama_lengkap'], $_POST['alamat'], $_POST['no_hp']);
         break;
-    
+
     default:
-    // require_once './controller/produkController.php';
-    $controller = new ProdukController($koneksi);
-    $produk = $controller->getProduk();
-    include './view/home.php';
-    break;
+        // require_once './controller/produkController.php';
+        $controller = new ProdukController($koneksi);
+        $produk = $controller->getAllProduk();
+        include './view/home.php';
+        break;
 }
