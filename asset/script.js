@@ -1,16 +1,19 @@
 
-
-// swiper
-
 var swiper = new Swiper(".mySwiper", {
-    pagination: {
-        el: ".swiper-pagination",
-        type: "progressbar",
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
 });
 
 function fnView() {
@@ -27,3 +30,34 @@ function fnView() {
       eyeIcon.title = 'lihat password';
     }
   }
+
+    function validateForm() {
+        // Mendapatkan nilai dari input
+        var username = document.getElementById('username').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var password = document.getElementById('Password').value.trim();
+        var repeatPassword = document.getElementById('konfirmasi_pass').value.trim();
+
+        // Cek apakah ada yang kosong
+        if (!email || !username || !password || !repeatPassword) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Oops!',
+                text: 'Semua field harus diisi!',
+            });
+            return false; // Mencegah pengiriman formulir
+        }
+
+        // Cek kesesuaian password
+        if (password !== repeatPassword) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Oops!',
+                text: 'Password dan konfirmasi password tidak cocok!',
+            });
+            return false; // Mencegah pengiriman formulir
+        }
+
+        return true; // Lanjutkan pengiriman formulir
+    }
+

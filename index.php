@@ -4,7 +4,9 @@ require_once './config/koneksi.php';
 require_once './config/midtrans-config.php';
 require_once './controller/userController.php';
 require_once './controller/produkController.php';
+require_once './controller/programController.php';
 require_once './controller/transaksiController.php';
+require_once './controller/artikelController.php';
 
 $produkController = new ProdukController($koneksi);
 $transaksiController = new TransaksiController($koneksi);
@@ -19,8 +21,6 @@ $code = isset($_GET['code']) ? $_GET['code'] : '';
 // }
 // jika action diklik
 switch ($action) {
-
-
     case 'login':
         // require_once './controller/userController.php';
         $controller = new UserController($koneksi);
@@ -36,7 +36,6 @@ switch ($action) {
             $controller->register($_POST['email'], $_POST['username'], $_POST['password'], $_POST['repeat_password']);
         }
         include './view/register.php';
-        break;
         break;
     case 'verif':
         include './view/verif.php';
@@ -73,6 +72,11 @@ switch ($action) {
         // require_once './controller/produkController.php';
         $controller = new ProdukController($koneksi);
         $produk = $controller->getAllProduk();
+        $controller = new programController($koneksi);
+        $program = $controller->getAllProgram();
+        $controller = new artikelController($koneksi);
+        $artikel = $controller->getAllArtikel();
+
         include './view/home.php';
         break;
 }

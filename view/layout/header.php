@@ -40,7 +40,7 @@
     <script src="./asset/toastr/toastr.min.js"></script>
     <script src="./asset/script.js"></script>
 
-    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <!-- <script src="./node_modules/flowbite/dist/flowbite.min.js"></script> -->
 
 
 </head>
@@ -106,7 +106,7 @@
                         </ul>
 
                         <div class="p-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Sign Out </a>
+                            <a href="index.php?action=logout" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Sign Out </a>
                         </div>
                     </div>
                     <?php else: ?>
