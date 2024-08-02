@@ -40,3 +40,41 @@ Pastikan Anda sudah menginstal:
    ```sh
    git clone https://github.com/bayu dani/BroGym.git
    
+2. **Install Depedensi PHP**
+   ```sh
+   composer install
+
+   
+3. **Install Depedensi JavaScript**
+   ```sh
+   npm install
+
+4. **buat file configurasi di folder config "midtrans-config.php**
+   ```sh
+   require './vendor/autoload.php';
+
+   // Set your Merchant Server Key
+   \Midtrans\Config::$serverKey = 'Your Server Key'
+   // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+   \Midtrans\Config::$isProduction = false;
+   // Set sanitization on (default)
+   \Midtrans\Config::$isSanitized = true
+   // Set 3DS transaction for credit card to true
+   \Midtrans\Config::$is3ds = true
+
+4. **buat file configurasi di folder config "smtp-config.php**
+   ```sh
+   require './vendor/autoload.php'; // Include Composer's autoloader
+
+   use PHPMailer\PHPMailer\SMTP;
+   use PHPMailer\PHPMailer\Exception;
+   // File config/smtp-config.php
+
+   $smtpHost = 'smtp.gmail.com';
+   $smtpAuth = true;
+   $smtpUsername = 'youremail@gmail.com';
+   $smtpPassword = 'APP PASSWORD';
+
+
+
+
