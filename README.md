@@ -6,7 +6,7 @@
 Gym Management System adalah sebuah aplikasi berbasis web untuk manajemen gym, termasuk pendaftaran member, pemilihan paket membership, dan sistem absensi menggunakan scan barcode. Proyek ini dibangun menggunakan PHP native dan Taillwind  untuk tampilan antarmuka.
 
 ## Screenshot
-![Gym Management System Screenshot](https://drive.google.com/file/d/1zZ7-jrYpnfplHipJHQfXeWihoWWpRE4p/view?usp=sharing)
+![Gym Management System Screenshot](https://drive.google.com/file/d/1zZ7-jrYpnfplHipJHQfXeWihoWWpRE4p/view?usp=.png)
 
 ## Teknologi yang Digunakan
 Proyek ini dibangun menggunakan teknologi berikut:
