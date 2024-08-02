@@ -17,6 +17,8 @@ Proyek ini dibangun menggunakan teknologi berikut:
 - [Midtrans](https://midtrans.com/): Payment gateway untuk transaksi pembayaran.
 - [PHPMailer](https://github.com/PHPMailer/PHPMailer): Library untuk mengirim email.
 - [Instascan](https://github.com/schmich/instascan): Library JavaScript untuk membaca QR code.
+- [SweetAlert] : Library JavaScript untuk alert yang lebih menarik.
+- [SwiperJs] : Library JavaScript untuk scrolling. 
 
 ## Fitur
 - Pendaftaran dan login pengguna.
