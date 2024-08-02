@@ -75,6 +75,8 @@ Pastikan Anda sudah menginstal:
    $smtpUsername = 'youremail@gmail.com';
    $smtpPassword = 'APP PASSWORD';
 
+### Kontak
+Jika Anda memiliki pertanyaan, hubungi kami di babay311204@gmail.com.
 
 
 
