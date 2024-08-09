@@ -9,6 +9,15 @@ class Artikel {
         $this->koneksi = $db;
     }
 
+    public function GetAllArtikell() {
+        $query = "SELECT * FROM " . $this->table_name;
+        $result = mysqli_query($this->koneksi, $query);
+        if ($result) {
+            return mysqli_fetch_all($result, MYSQLI_ASSOC);
+        }
+        return [];
+    }
+    
     public function getAllArtikel($limit = 3) {
         $stmt = $this->koneksi->prepare("SELECT * FROM $this->table_name LIMIT ?");
         $stmt->bind_param("i", $limit);

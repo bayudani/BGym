@@ -106,6 +106,10 @@
             }
 
         }
+        public function logout(){
+            header("location:index.php");
+            session_destroy();
+        }
 
         
     }

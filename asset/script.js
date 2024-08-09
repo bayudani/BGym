@@ -1,4 +1,4 @@
-
+// import './swiper';
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
   grabCursor: true,
@@ -61,3 +61,19 @@ function fnView() {
         return true; // Lanjutkan pengiriman formulir
     }
 
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('myCartDropdownButton1').click();
+  });
+
+  document.querySelectorAll('.harga').forEach(function(element) {
+      let harga = parseInt(element.innerText.replace('Rp.', '').replace(/\./g, '').trim());
+      if (!isNaN(harga)) {
+          let formattedHarga = new Intl.NumberFormat('id-ID', {
+              style: 'currency',
+              currency: 'IDR',
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0
+          }).format(harga);
+          element.innerText = formattedHarga;
+      }
+  });

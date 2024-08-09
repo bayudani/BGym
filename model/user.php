@@ -56,7 +56,7 @@ class User
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Verifikasi email anda';
-            $mail->Body    = 'Hai ' . $username . ' Terimakasih sudah mendaftar di brogym, <br> Mohon verifikasi akun anda <a href="https://2d6e-180-94-12-255.ngrok-free.app/BroGym/index.php?action=verify&code=' . $code_verif . '"><strong> di sini.</strong></a> <br> abaikan email ini jika anda tidak merasa mendaftar.';
+            $mail->Body    = 'Hai ' . $username . ' Terimakasih sudah mendaftar di brogym, <br> Mohon verifikasi akun anda <a href="https://dbbf-180-94-12-255.ngrok-free.app/brogym//index.php?action=verify&code=' . $code_verif . '"><strong> di sini.</strong></a> <br> abaikan email ini jika anda tidak merasa mendaftar.';
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
@@ -101,6 +101,15 @@ class User
 
         }
         return false;
+    }
+
+    public function getById($id_user){
+        $query = "SELECT * FROM user WHERE id_user =?";
+        $stmt = $this->koneksi->prepare($query);
+        $stmt->bind_param("i", $id_user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
     }
 
 }

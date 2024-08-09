@@ -12,9 +12,13 @@ class ProgramController {
         return $this->programModel->getAllProgram();
     }
 
-    public function showFormTransaksi($id_produk) {
-        $produk = $this->programModel->getProgramById($id_produk);
-        include './view/transaksi.php';
+    public function getProgramById($id_program){
+        $program = $this->programModel->getProgramById($id_program);
+        if ($program) {
+            include './view/detail_program.php';
+        } else {
+            echo "Artikel tidak ditemukan.";
+        }
     }
 }
 ?>

@@ -32,5 +32,14 @@ class Member {
         }
         return $id_member;
     }
+
+    public function getById($id_user){
+        $query = "SELECT * FROM member WHERE  id_user=?";
+        $stmt = $this->koneksi->prepare($query);
+        $stmt->bind_param("i", $id_user);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
 }
 ?>

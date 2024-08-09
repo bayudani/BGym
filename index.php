@@ -7,12 +7,26 @@ require_once './controller/produkController.php';
 require_once './controller/programController.php';
 require_once './controller/transaksiController.php';
 require_once './controller/artikelController.php';
+require_once './controller/profileController.php';
 
 $produkController = new ProdukController($koneksi);
 $transaksiController = new TransaksiController($koneksi);
 // parameter action 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 $code = isset($_GET['code']) ? $_GET['code'] : '';
+
+echo '<!DOCTYPE html>';
+echo '<html lang="en">';
+echo '<head>';
+echo '<meta charset="UTF-8">';
+echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+// Tambahkan link ke manifest.json
+echo '<link rel="manifest" href="manifest.json">';
+echo '<meta name="theme-color" content="#317EFB"/>';
+echo '<title>BroGym</title>';
+echo '</head>';
+echo '<body>';
+
 
 // $valid_actions = ['/','login','register','product','artikel'];
 // if (!in_array($action,$valid_actions)) {
@@ -45,7 +59,13 @@ switch ($action) {
         include './view/admin/index.php';
         break;
     case 'profile':
-        include './view/profile.php';
+        // if (!isset($_SESSION['login']['status']) || $_SESSION['login']['status'] !== true) {
+        //     header("Location: index.php?action=login");
+        //     exit();
+        // }
+        $controller = new ProfileController($koneksi);
+        $controller->showProfile();
+        // include './view/profile.php';
         break;
     case 'logout':
         session_destroy();
@@ -67,7 +87,20 @@ switch ($action) {
         $controller = new TransaksiController($koneksi);
         $controller->prosesTransaksi($_POST['id_produk'], $_POST['nama_lengkap'], $_POST['alamat'], $_POST['no_hp']);
         break;
+    case 'detail':
+        $controller = new ProgramController($koneksi);
+        $id_program = $_GET['id_program'] ?? 0;
+        $controller->getProgramById($id_program);
+        break;
+        // artikel
 
+    case 'artikel';
+        $controller = new artikelController($koneksi);
+        $artikel = $controller->getAllArtikell();
+        $artikel3 = $controller->getAllArtikel();
+        // $controller = new artikelController($koneksi);
+        include './view/artikel.php';
+        break;
     default:
         // require_once './controller/produkController.php';
         $controller = new ProdukController($koneksi);
@@ -80,3 +113,17 @@ switch ($action) {
         include './view/home.php';
         break;
 }
+echo '<script>';
+echo 'if ("serviceWorker" in navigator) {';
+echo '  window.addEventListener("load", function() {';
+echo '    navigator.serviceWorker.register("sw.js").then(function(registration) {';
+echo '      console.log("Service Worker registered with scope:", registration.scope);';
+echo '    }, function(error) {';
+echo '      console.log("Service Worker registration failed:", error);';
+echo '    });';
+echo '  });';
+echo '}';
+echo '</script>';
+
+echo '</body>';
+echo '</html>';

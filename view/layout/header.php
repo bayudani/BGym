@@ -76,7 +76,7 @@
                             </a>
                         </li>
                         <li class="shrink-0">
-                            <a href="#" title="" class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                            <a href="index.php?action=artikel" title="" class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
                                 Artikel
                             </a>
                         </li>
@@ -99,7 +99,7 @@
 
                     <div id="userDropdown1" class="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
-                            <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> My Account </a></li>
+                            <li><a href="index.php?action=profile" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> My Account </a></li>
                             <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> My Orders </a></li>
 
                             <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Billing Data </a></li>
@@ -127,7 +127,7 @@
             <div id="ecommerce-navbar-menu-1" class="bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border border-gray-200 rounded-lg py-3 hidden px-4 mt-4">
                 <ul class="text-gray-900 dark:text-white text-sm font-medium dark:text-white space-y-3">
                     <li>
-                        <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Home</a>
+                        <a href="index.php" class="hover:text-primary-700 dark:hover:text-primary-500">Home</a>
                     </li>
                     <li>
                         <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Membership</a>
@@ -136,7 +136,7 @@
                         <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Produk</a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Artikel</a>
+                        <a href="index.php?action=artikel   " class="hover:text-primary-700 dark:hover:text-primary-500">Artikel</a>
                     </li>
 
                 </ul>

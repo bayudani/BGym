@@ -46,8 +46,8 @@
             </svg></a></li>
         </ul>
 
-        <p class="text-base">&copy; 2023<a href='https://readymadeui.com/' target='_blank'
-          class="hover:underline mx-2">ReadymadeUI</a>All Rights Reserved.</p>
+        <p class="text-base">&copy; 2024<a href='https://readymadeui.com/' target='_blank'
+          class="hover:underline mx-2">Bayu Dani Kurniawan</a>All Rights Reserved.</p>
       </div>
     </footer>
 </body>

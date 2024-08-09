@@ -18,10 +18,10 @@ class Program {
         return [];
     }
 
-    public function getProgramById($id_produk) {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE id_produk = ?";
+    public function getProgramById($id_program) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE id_program = ?";
         $stmt = $this->koneksi->prepare($query);
-        $stmt->bind_param("i", $id_produk);
+        $stmt->bind_param("i", $id_program);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_assoc();

@@ -19,7 +19,7 @@ class artikelController
         foreach ($articles as &$article) {
             if (isset($article['date'])) {
                 $datetime = new DateTime($article['date']);
-                $article['formatted_date'] = $datetime->format('d-m-Y');
+                $article['formatted_date'] = $datetime->format('F-d-Y');
             }
             // Membatasi jumlah karakter pada isi artikel
             $isi = $article['isi'];
@@ -33,5 +33,20 @@ class artikelController
         }
 
         return $articles;
+    }
+
+    public function getAllArtikell() {
+        $artikel = $this->artikelModel->GetAllArtikell();
+        foreach ($artikel as &$artikels) {
+            $isi = $artikels['isi'];
+            $max=50; //panjang karaketer
+            if (strlen($isi)>$max) {
+                $return = substr($isi,0,strrpos(substr($isi,0,$max),' ')).'...';
+            }else{
+                $return = $isi;
+            }
+            $artikels['return'] = $return;
+        }
+        return $artikel;
     }
 }
