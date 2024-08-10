@@ -2,7 +2,9 @@ self.addEventListener("install", function (event) {
     event.waitUntil(
         caches.open("v1").then(function (cache) {
             return cache.addAll([
+                
                 "index.php",
+                
                 // "asset/image/404_benchpress.jpg",
                 "asset/image/455_nutrisi1.jpg",
                 "asset/image/561_gymcwe.jpeg",

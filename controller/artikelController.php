@@ -49,4 +49,39 @@ class artikelController
         }
         return $artikel;
     }
+    
+    // artikel by id
+    public function getArtikelById($id_artikel){
+        $artikel = $this->artikelModel->getArtikelById($id_artikel);
+        if ($artikel) {
+            include './view/detail_artikel.php';
+        }else{
+            echo "Artikel tidak ditemukan";
+        }
+        // return $artikel;
+    }
+
+    public function getKategori(){
+        $kategori = $this->artikelModel->getKategoriWithCount();
+        return $kategori;
+    }
+
+   public function getArtikelNew() {
+    // Ambil artikel terbaru dari model
+    $artikelNew = $this->artikelModel->getArtikelNew();
+
+    // Pastikan ada data yang diambil
+    if (isset($artikelNew['date'])) {
+        // Buat objek DateTime dengan tanggal dari artikel
+        $dateTime = new DateTime($artikelNew['date']);
+        // Format tanggal menjadi format yang diinginkan
+        $artikelNew['formatted_date'] = $dateTime->format('F d, Y'); // Mengubah format tanggal sesuai kebutuhan
+    } else {
+        // Jika tidak ada tanggal, set formatted_date ke string kosong atau default
+        $artikelNew['formatted_date'] = 'Tanggal tidak tersedia';
+    }
+
+    return $artikelNew;
+}
+
 }

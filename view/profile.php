@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
-<body class="bg-[#20354b]">
+<body class="">
     <ul class="flex items-center justify-start ml-10 font-[sans-serif] space-x-4 mt-4">
-        <li class="text-white text-base cursor-pointer">
-            <a href="index.php">Home</a>
+        <li class="text-gray-700 text-base cursor-pointer">
+            <a href="index.php?action=home">Home</a>
         </li>
         <li>
             <svg xmlns="http://www.w3.org/2000/svg" class="fill-gray-400 w-3.5 -rotate-90" viewBox="0 0 24 24">
@@ -28,12 +28,12 @@
     </ul>
 
     <!-- profile -->
-    <div class="container mx-auto px-4 mt-10 bg-[#20354b]" id="content">
+    <div class="container mx-auto px-4 mt-10 bg-white" id="content">
         <div class="flex flex-wrap -mx-4">
             <div class="w-full md:w-1/3 px-4">
-                <div class="bg-[#20354b] shadow-md rounded-lg overflow-hidden mb-4">
-                    <div class="bg-[#20354b] px-4 py-2">
-                        <h2 class="font-semibold text-lg text-white">Profile Picture</h2>
+                <div class="bg-white shadow-md rounded-lg overflow-hidden mb-4">
+                    <div class="bg-white px-4 py-2">
+                        <h2 class="font-semibold text-lg text-gray-700">Profile Picture</h2>
                     </div>
                     <div class="px-4 py-4 text-center">
                         <img class="inline-block h-40 w-40 rounded-full" src="./asset/img/profile (1).png" alt="foto profile" />
@@ -41,19 +41,19 @@
                 </div>
             </div>
             <div class="w-full md:w-2/3 px-4">
-                <div class="bg-[#20354b] shadow-md rounded-lg overflow-hidden mb-4">
-                    <div class="bg-[#20354b] px-4 py-2">
-                        <h2 class="font-semibold text-lg text-white">Detail akun</h2>
+                <div class="bg-white shadow-md rounded-lg overflow-hidden mb-4">
+                    <div class="bg-white px-4 py-2">
+                        <h2 class="font-semibold text-lg text-gray-700">Detail akun</h2>
                     </div>
                     <div class="px-4 py-4">
                         <form>
                             <div class="mb-4">
                                 <label class="block text-sm font-medium text-gray-700" for="username">Username</label>
-                                <input class="mt-1 block w-full h-10 bg-[#20354b] border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-white" id="username" type="text" value="<?php echo $user['username']; ?>" readonly />
+                                <input class="mt-1 block w-full h-10 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-gray-700" id="username" type="text" value="<?php echo $user['username']; ?>" readonly />
                             </div>
                             <div class="mb-4">
                                 <label class="block text-sm font-medium text-gray-700" for="email">Email</label>
-                                <input class=" text-white mt-1 block w-full h-10 bg-[#20354b] border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="email" type="text" value="<?php echo $user['email']; ?>" readonly />
+                                <input class=" text-gray-700 mt-1 block w-full h-10 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" id="email" type="text" value="<?php echo $user['email']; ?>" readonly />
                             </div>
                             <a type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="editProfile.php">
                                 Edit profile
@@ -65,14 +65,14 @@
 
             <!-- memebrship -->
             <div class="w-full px-4">
-                <div class="bg-[#20354b] shadow-md rounded-lg overflow-hidden mb-4">
-                    <div class="bg-[#20354b] px-4 py-2">
-                        <h2 class="font-semibold text-lg text-white">Detail Membership</h2>
+                <div class="bg-white shadow-md rounded-lg overflow-hidden mb-4">
+                    <div class="bg-white px-4 py-2">
+                        <h2 class="font-semibold text-lg text-gray-700">Detail Membership</h2>
                     </div>
                     <div class="px-4 py-4">
                         <?php if ($member) : ?>
-                            <section class="w-64 mx-auto bg-[#20354b] rounded-2xl px-8 py-6 shadow-lg">
-                                <div class="flex items-center justify-between">
+                            <section class="w-64 m  ml-10 bg-white rounded-2xl px-8 py-6 shadow-lg">
+                                <div class="flex items-center justify-star">
                                     <span class="text-gray-400 text-sm"><?php echo $member['id_member']; ?></span>
                                     <span class="text-emerald-400">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,14 +92,14 @@
                                 </div>
 
                                 <div class="mt-8 ">
-                                    <h2 class="text-white font-bold text-2xl tracking-wide"><?php echo $member['Nama_lengkap']; ?></h2>
+                                    <h2 class="text-gray-700 font-bold text-2xl tracking-wide"><?php echo $member['Nama_lengkap']; ?></h2>
                                 </div>
                                 <p class="text-emerald-400 font-semibold mt-2.5">
                                     Berlaku sampai <br> <span><?php echo $member['expired_at']; ?></span>
                                 </p>
 
                                 
-                                
+                            <button onclick="print()">Donlod</button>
 
                             </section>
 
@@ -107,7 +107,7 @@
                             </section>
                         <?php else : ?>
                             <div class="mb-4">
-                                <a href="index.php" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <a href="index.php" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-gray-700 bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Daftar Member
                                 </a>
                             </div>
@@ -117,6 +117,11 @@
             </div>
         </div>
     </div>
+    <script>
+        function print(){
+            window.print();
+        }
+    </script>
 </body>
 
 </html>

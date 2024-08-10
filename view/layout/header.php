@@ -76,7 +76,7 @@
                             </a>
                         </li>
                         <li class="shrink-0">
-                            <a href="index.php?action=artikel" title="" class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                            <a href="artikel" title="" class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
                                 Artikel
                             </a>
                         </li>

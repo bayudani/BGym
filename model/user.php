@@ -56,7 +56,7 @@ class User
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Verifikasi email anda';
-            $mail->Body    = 'Hai ' . $username . ' Terimakasih sudah mendaftar di brogym, <br> Mohon verifikasi akun anda <a href="https://dbbf-180-94-12-255.ngrok-free.app/brogym//index.php?action=verify&code=' . $code_verif . '"><strong> di sini.</strong></a> <br> abaikan email ini jika anda tidak merasa mendaftar.';
+            $mail->Body    = 'Hai ' . $username . ' Terimakasih sudah mendaftar di brogym, <br> Mohon verifikasi akun anda <a href="https://bb1e-180-94-12-255.ngrok-free.app/brogym/index.php?action=verify&code=' . $code_verif . '"><strong> di sini.</strong></a> <br> abaikan email ini jika anda tidak merasa mendaftar.';
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();

@@ -44,7 +44,6 @@ switch ($action) {
         include './view/login.php';
         break;
     case 'register':
-        // require_once './controller/userController.php';
         $controller = new UserController($koneksi);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $controller->register($_POST['email'], $_POST['username'], $_POST['password'], $_POST['repeat_password']);
@@ -65,14 +64,16 @@ switch ($action) {
         // }
         $controller = new ProfileController($koneksi);
         $controller->showProfile();
-        // include './view/profile.php';
+        break;
+    case 'kartu';
+        $controller = new ProfileController($koneksi);
+        $controller->showProfile();
         break;
     case 'logout':
         session_destroy();
         header('Location: index.php');
         break;
     case 'verify':
-        // require_once './controller/userController.php';
         $controller = new UserController($koneksi);
         $controller->verfiy($code);
         break;
@@ -93,16 +94,20 @@ switch ($action) {
         $controller->getProgramById($id_program);
         break;
         // artikel
-
+    case 'detailArtikel':
+        $controller = new artikelController($koneksi);
+        $id_artikel = $_GET['id_artikel']??0;
+        $controller->getArtikelById($id_artikel);
+        break;
     case 'artikel';
         $controller = new artikelController($koneksi);
         $artikel = $controller->getAllArtikell();
         $artikel3 = $controller->getAllArtikel();
-        // $controller = new artikelController($koneksi);
+        $kategori = $controller->getKategori();
+        $new = $controller->getArtikelNew();
         include './view/artikel.php';
         break;
     default:
-        // require_once './controller/produkController.php';
         $controller = new ProdukController($koneksi);
         $produk = $controller->getAllProduk();
         $controller = new programController($koneksi);

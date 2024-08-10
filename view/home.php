@@ -286,7 +286,7 @@ include './config/koneksi.php'
                             <img src="asset/image/<?php echo $artikels['foto']; ?>" alt="Blog Post 1" class="w-full h-96 object-cover" />
                             <div class="p-6 absolute bottom-0 left-0 right-0 bg-white opacity-90">
                                 <span class="text-sm block text-gray-600 mb-2"><?php echo $artikels['formatted_date']; ?></span>
-                                <a href="index.php?action=artikel" class="text-xl font-bold text-[#333]"><?php echo $artikels['judul']; ?></a>
+                                <a href="index.php?action=detailArtikel&id_artikel=<?php echo $artikels['id_artikel']; ?>" class="text-xl font-bold text-[#333]"><?php echo $artikels['judul']; ?></a>
                                 <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
                                     <p class="text-gray-600 text-sm"><?php echo  $artikels['excerpt']; ?></p>
                                 </div>
@@ -296,7 +296,10 @@ include './config/koneksi.php'
 
                 </div>
                 <button class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] mt-6 mx-auto flex" type="button" data-ripple-dark="true">
-                    Lihat selengkapnya
+
+                    <a href="index.php?action=artikel" >
+                        Lihat selengkapnya
+                    </a>
                 </button>
             </div>
         </div>

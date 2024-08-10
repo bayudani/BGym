@@ -95,7 +95,7 @@
                     }
                     exit();
                 }else{
-                    $_SESSION['error'] = 'Email not verified. Please check your email to verify your account.';
+                    $_SESSION['error'] = 'Email anda belum terverifikasi';
                     header("Location: index.php?action=login");
                     exit();
                 }
