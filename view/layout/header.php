@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
-    <title>BroGym</title>
+    <title>Bgym</title>
     <!-- font awesom -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- bs icon -->
@@ -53,15 +53,15 @@
 
                 <div class="flex items-center space-x-8">
                     <div class="shrink-0">
-                        <a href="#" title="" class="">
-                            <img class="block w-auto h-20 dark:hidden" src="./asset/img/logo.png" alt="">
-                            <img class="hidden w-auto h-10 dark:block" src="./asset/img/logo.png" alt="">
+                        <a href="/Bgym" title="" class="">
+                            <img class="block w-auto h-20 dark:hidden" src="./asset/img/logoB.png" alt="">
+                            <img class="hidden w-auto h-10 dark:block" src="./asset/img/logoB.png" alt="">
                         </a>
                     </div>
 
                     <ul class="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
                         <li>
-                            <a href="index.php" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+                            <a href="/Bgym" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
                                 Home
                             </a>
                         </li>
@@ -99,7 +99,7 @@
 
                     <div id="userDropdown1" class="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
                         <ul class="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
-                            <li><a href="index.php?action=profile" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> My Account </a></li>
+                            <li><a href="profile" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> My Account </a></li>
                             <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> My Orders </a></li>
 
                             <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Billing Data </a></li>
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <?php else: ?>
-                        <a href="index.php?action=login" type="button" class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-red-600 dark:hover:bg-red-500 dark:focus:ring-blue-800 mx-10">Login</a>
+                        <a href="login" type="button" class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-red-600 dark:hover:bg-red-500 dark:focus:ring-blue-800 mx-10">Login</a>
                     <?php endif;?>
 
                     <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1" aria-controls="ecommerce-navbar-menu-1" aria-expanded="false" class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">

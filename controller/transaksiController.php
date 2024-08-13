@@ -18,7 +18,7 @@ class TransaksiController {
             $snap_token = $result['snap_token'];
             // include './view/payment.php';
         } else {
-            header("location:index.php?action=login");
+            header("login");
         }
     }
 }

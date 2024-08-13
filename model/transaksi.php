@@ -1,15 +1,18 @@
 <?php
 require_once './config/midtrans-config.php';
 require_once './config/smtp-config.php';
+require_once './config/ultramsg-config.php';
 require_once './model/member.php';
 
 require './vendor/autoload.php'; // Include Composer's autoloader
 require './config/smtp-config.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
- function sendEmail($to,$subject,$body){
+function sendEmail($to, $subject, $body)
+{
     global $smtpHost, $smtpAuth, $smtpUsername, $smtpPassword, $smtpSecure, $smtpPort;
     $mail = new PHPMailer(true);
     try {
@@ -23,7 +26,7 @@ use PHPMailer\PHPMailer\Exception;
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('no-reply@Brogym.com', 'BroGym');
+        $mail->setFrom('no-reply@Bgym.com', 'Bgym');
         $mail->addAddress($to);     //Add a recipient
 
         //Content
@@ -39,6 +42,20 @@ use PHPMailer\PHPMailer\Exception;
         echo "Message could not be sent. Mailer Error:{$mail->ErrorInfo}";
     }
 }
+
+function sendWhasApp($to, $body)
+{
+    global $ultramsg_token, $instance_id;
+
+    $ultramsg_token = $ultramsg_token; // Ultramsg.com token
+    $instance_id = $instance_id; // Ultramsg.com instance id
+    $client = new UltraMsg\WhatsAppApi($ultramsg_token, $instance_id);
+
+    $to =$to;
+    $body = $body;
+    $api = $client->sendChatMessage($to, $body);
+    // print_r($api);
+}
 class Transaksi
 {
     private $koneksi;
@@ -49,7 +66,7 @@ class Transaksi
     }
 
     // kirim notif email
-   
+
     public function createTransaksi($id_user, $id_produk, $nama_lengkap, $alamat, $no_hp, $email)
     {
         $query = "INSERT INTO transaksi (id_user, id_produk) VALUES (?, ?)";
@@ -115,20 +132,21 @@ class Transaksi
         $member->createMember($id_member, $id_user, $nama_lengkap, $alamat, $no_hp, $expired_at);
 
         // kirim notif
-        $subject = "Selamat, Anda telah menjadi member BroGym!";
-        $body = "Selamat $nama_lengkap. Anda sekarang telah menjadi member di BroGym. Keanggotaan Anda akan berakhir pada $expired_at.";
+        $to = $no_hp;
+        $subject = "Selamat, Anda telah menjadi member Bgym!";
+        $body = "Selamat $nama_lengkap. Anda sekarang telah menjadi member di Bgym. Keanggotaan Anda akan berakhir pada $expired_at.";
         sendEmail($email, $subject, $body);
+        sendWhasApp($to, $body);
         return array('transaksi_id' => $transaksi_id, 'snap_token' => $snapToken);
     }
 
-    public function getTransaksiById($id_transaksi,$transaksi)
+    public function getTransaksiById($id_transaksi, $transaksi)
     {
         $query = "SELECT * FROM transaksi WHERE id_transaksi = ?";
         $stmt = $this->koneksi->prepare($query);
         $stmt->bind_param("i", $id_transaksi);
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result->fetch_assoc();   
-
+        return $result->fetch_assoc();
     }
 }

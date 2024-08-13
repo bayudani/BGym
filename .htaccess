@@ -1,24 +1,26 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Hilangkan .php dari URL
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.php?action=$1 [QSA,L]
-
-    # Aturan untuk menangani request ke halaman artikel
-    RewriteRule ^artikel$ index.php?action=artikel [QSA,L]
-    RewriteRule ^artikel$ index.php[QSA,L]
+    # Aturan untuk detail artikel berdasarkan ID
+    RewriteRule ^detailartikel/([0-9]+)$ index.php?action=detailArtikel&id_artikel=$1 [QSA,L]
+    RewriteRule ^detailProgram/([0-9]+)$ index.php?action=detail&id_program=$1 [QSA,L]
 
     # Aturan untuk menangani request ke halaman lainnya (login, register, dll.)
     RewriteRule ^login$ index.php?action=login [QSA,L]
     RewriteRule ^register$ index.php?action=register [QSA,L]
-
-    # Aturan untuk detail artikel berdasarkan ID
-    RewriteRule ^artikel/([0-9]+)$ index.php?action=detailArtikel&id_artikel=$1 [QSA,L]
+    RewriteRule ^transaksi$ index.php?action=prosesTransaksi [QSA,L]
+    RewriteRule ^admin$ index.php?action=admin [QSA,L]
+    RewriteRule ^artikel$ index.php?action=artikel [QSA,L]
+    RewriteRule ^profile$ index.php?action=profile [QSA,L]
 
     # Hilangkan .php dari file lainnya
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
+
+    # Aturan default untuk menangani semua permintaan lainnya
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?action=$1 [QSA,L]
+
 </IfModule>

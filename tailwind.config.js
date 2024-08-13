@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './view/**/*.php',
+    './model/**/*.php',
      './node_modules/flowbite/**/*.js',
   ],
   darkMode: 'class',

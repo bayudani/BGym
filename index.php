@@ -20,10 +20,11 @@ echo '<html lang="en">';
 echo '<head>';
 echo '<meta charset="UTF-8">';
 echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+echo '<meta name="description" content="ByGym.">';
 // Tambahkan link ke manifest.json
 echo '<link rel="manifest" href="manifest.json">';
 echo '<meta name="theme-color" content="#317EFB"/>';
-echo '<title>BroGym</title>';
+echo '<title>Bgym</title>';
 echo '</head>';
 echo '<body>';
 
@@ -55,11 +56,15 @@ switch ($action) {
         break;
         // admin
     case 'admin':
+        if (!isset($_SESSION['login_status']) || $_SESSION['login_status'] !== true || ($_SESSION['login']['level'] !== 'admin' && $_SESSION['login']['level'] !== 'admin artikel')) {
+            header("Location:login");
+            exit();
+        }
         include './view/admin/index.php';
         break;
     case 'profile':
         // if (!isset($_SESSION['login']['status']) || $_SESSION['login']['status'] !== true) {
-        //     header("Location: index.php?action=login");
+        //     header("Location: login");
         //     exit();
         // }
         $controller = new ProfileController($koneksi);
@@ -71,7 +76,7 @@ switch ($action) {
         break;
     case 'logout':
         session_destroy();
-        header('Location: index.php');
+        header('Location:/Bgym');
         break;
     case 'verify':
         $controller = new UserController($koneksi);
@@ -96,7 +101,7 @@ switch ($action) {
         // artikel
     case 'detailArtikel':
         $controller = new artikelController($koneksi);
-        $id_artikel = $_GET['id_artikel']??0;
+        $id_artikel = $_GET['id_artikel'] ?? 0;
         $controller->getArtikelById($id_artikel);
         break;
     case 'artikel';

@@ -2,6 +2,7 @@
 // File: model/User.php
 require './vendor/autoload.php'; // Include Composer's autoloader
 require './config/smtp-config.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -40,7 +41,7 @@ class User
         global $smtpHost, $smtpAuth, $smtpUsername, $smtpPassword, $smtpSecure, $smtpPort;
         $mail = new PHPMailer(true);
         try {
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+            $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = $smtpHost;                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -50,13 +51,74 @@ class User
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('from@Brogym.com', 'BroGym registrasi');
+            $mail->setFrom('from@Bgym.com', 'Bgym registrasi');
             $mail->addAddress($email, $username);     //Add a recipient
 
-            //Content
+
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Verifikasi email anda';
-            $mail->Body    = 'Hai ' . $username . ' Terimakasih sudah mendaftar di brogym, <br> Mohon verifikasi akun anda <a href="https://bb1e-180-94-12-255.ngrok-free.app/brogym/index.php?action=verify&code=' . $code_verif . '"><strong> di sini.</strong></a> <br> abaikan email ini jika anda tidak merasa mendaftar.';
+            $mail->Body    = '
+                <!DOCTYPE html>
+                <html lang="id">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Verifikasi Email</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f4f4f4;
+                            color: #333;
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .container {
+                            width: 100%;
+                            max-width: 600px;
+                            margin: 0 auto;
+                            background-color: #ffffff;
+                            padding: 20px;
+                            border-radius: 8px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        }
+                        h1 {
+                            color: #007bff;
+                        }
+                        p {
+                            font-size: 16px;
+                            line-height: 1.5;
+                        }
+                        a {
+                            color: #007bff;
+                            text-decoration: none;
+                        }
+                        a:hover {
+                            text-decoration:none;
+                        }
+                        .button {
+                            display: inline-block;
+                            padding: 10px 20px;
+                            margin-top: 20px;
+                            background-color: #007bff;
+                            color: #ffffff;
+                            text-align: center;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            font-weight: bold;
+                        }
+                    </style>
+                </head>
+                <body>
+                
+                    <div class="container">
+                        <h1>Hai, ' . $username . '!</h1>
+                        <p>Terimakasih sudah mendaftar di Bgym. Mohon verifikasi akun Anda dengan mengklik tombol di bawah ini:</p>
+                        <a href=" https://2c79-180-94-12-255.ngrok-free.app/Bgym/index.php?action=verify&code=' . $code_verif . '" class="button">Verifikasi Akun</a>
+                        <p>Jika Anda tidak merasa mendaftar, abaikan email ini.</p>
+                        <p>Salam,<br>Tim Bgym</p>
+                    </div>
+                </body>
+                </html>';
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
@@ -98,12 +160,12 @@ class User
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
             return $user;
-
         }
         return false;
     }
 
-    public function getById($id_user){
+    public function getById($id_user)
+    {
         $query = "SELECT * FROM user WHERE id_user =?";
         $stmt = $this->koneksi->prepare($query);
         $stmt->bind_param("i", $id_user);
@@ -111,5 +173,4 @@ class User
         $result = $stmt->get_result();
         return $result->fetch_assoc();
     }
-
 }

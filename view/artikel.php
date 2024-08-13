@@ -21,7 +21,7 @@
             <ul class="flex flex-wrap -mx-2 overflow-hidden">
                 <?php foreach ($artikel3 as $artikels) : ?>
                     <li class="my-2 px-2 w-full overflow-hidden md:w-1/3 lg:w-1/3 xl:w-1/3">
-                        <a href="./article-details.html">
+                        <a href="index.php?action=detailArtikel&id_artikel=<?php echo $artikels['id_artikel']; ?>">
                             <div class="mx-2 flex items-center justify-center bg-gray-300 bg-cover bg-center relative rounded overflow-hidden" style="height:400px; background-image:url(asset/image/<?php echo $artikels['foto']; ?>)">
                                 <div class="absolute w-full h-full bg-black z-10 opacity-50"></div>
                                 <div class="relative z-20 text-center p-5">
@@ -56,9 +56,9 @@
                                 <div class="w-1/2 overflow-hidden <?php echo $index === 0 ? 'pr-2 md:pr-4' : 'pl-2 md:pl-4'; ?>">
                                     <div>
                                         <img class="w-full h-auto rounded" src="asset/image/<?php echo $artikel['foto']; ?>" alt="">
-                                        <h2 class="text-gray-900 font-thin font-serif text-xl my-5"><a href="./article-details.html"><?php echo $artikel['judul'] ?></a></h2>
+                                        <h2 class="text-gray-900 font-thin font-serif text-xl my-5"><a href="index.php?action=detailArtikel&id_artikel=<?php echo $artikel['id_artikel']; ?>"><?php echo $artikel['judul'] ?></a></h2>
                                         <p class="text-gray-900 font-thin tracking-wider leading-loose"><?php echo $artikel['return']; ?></p>
-                                        <a href="./article-details.html" class="inline-block pt-5 text-sm font-medium tracking-wider">Read More...</a>
+                                        <a href="index.php?action=detailArtikel&id_artikel=<?php echo $artikel['id_artikel']; ?>" class="inline-block pt-5 text-sm font-medium tracking-wider">Read More...</a>
                                     </div>
                                 </div>
                                 <!-- <div class="w-1/2 overflow-hidden pl-2 md:pl-4">
@@ -163,7 +163,7 @@
 
                             <?php foreach ($new as $news): ?>
                                 <li class="mb-3">
-                                    <a href="./article-details.html" class="flex">
+                                    <a href="detailartikel/<?php echo $news['id_artikel']; ?>" class="flex">
                                         <div class="w-1/3">
                                             <img class="rounded" src="asset/image/<?php echo $news['foto']; ?>" alt="artikel">
                                         </div>

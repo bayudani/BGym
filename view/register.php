@@ -93,7 +93,7 @@
                     <button type="submit" class="w-full shadow-xl py-2.5 px-5 text-sm font-semibold tracking-wider rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none transition-all" >
                         Register
                     </button>
-                    <p class="text-gray-800 text-sm mt-8 text-center">Already have an account? <a href="index.php?action=login" class="text-blue-500 font-semibold hover:underline ml-1">Login here</a></p>
+                    <p class="text-gray-800 text-sm mt-8 text-center">Already have an account? <a href="login" class="text-blue-500 font-semibold hover:underline ml-1">Login here</a></p>
                 </div>
             </form>
         </div>

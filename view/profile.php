@@ -14,7 +14,7 @@
 <body class="">
     <ul class="flex items-center justify-start ml-10 font-[sans-serif] space-x-4 mt-4">
         <li class="text-gray-700 text-base cursor-pointer">
-            <a href="index.php?action=home">Home</a>
+            <a href="/Bgym">Home</a>
         </li>
         <li>
             <svg xmlns="http://www.w3.org/2000/svg" class="fill-gray-400 w-3.5 -rotate-90" viewBox="0 0 24 24">
@@ -107,7 +107,7 @@
                             </section>
                         <?php else : ?>
                             <div class="mb-4">
-                                <a href="index.php" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-gray-700 bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <a href="/Bgym" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-gray-700 bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Daftar Member
                                 </a>
                             </div>

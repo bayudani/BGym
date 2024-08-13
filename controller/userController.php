@@ -31,48 +31,50 @@
 
         public function register($email, $username, $password, $repeat_password)
         {
-            
+
             // Pengecekan apakah email sudah terdaftar
-        if ($this->usermodel->isEmailRegistered($email)) {
-            $_SESSION['gagal'] = 'Email ini sudah terdaftar. Silakan gunakan email lain.';
-            header("Location: index.php?action=register");
-            exit();
-        }
+            if ($this->usermodel->isEmailRegistered($email)) {
+                $_SESSION['gagal'] = 'Email ini sudah terdaftar. Silakan gunakan email lain.';
+                header("Location:register");
+                exit();
+            }
             if ($password  === $repeat_password) {
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-                if ($this->usermodel->register($email,$username,$hashed_password)) {
+                if ($this->usermodel->register($email, $username, $hashed_password)) {
                     $_SESSION['berhasil'] = 'Akun Anda telah terdaftar';
                     $_SESSION['email'] = $email;
                     header("Location:index.php?action=verif");
                     exit();
-                }else{
+                } else {
                     $_SESSION['gagal'] = 'Terjadi kesalahan saat mendaftar.';
-                    header("Location: index.php?action=register");
+                    header("Location: register");
                     exit();
                 }
-            }else{
+            } else {
                 $_SESSION['gagal'] = 'Password tidak sama';
-                header("Location: index.php?action=register");
+                header("Location:register");
                 exit();
             }
         }
 
         // verify(kirim code ke email)
-        public function verfiy($code){
+        public function verfiy($code)
+        {
             if ($this->usermodel->verifyCode($code)) {
                 $_SESSION['berhasil'] = 'Email Anda telah diverifikasi';
-                header("Location: index.php");
+                header("Location:/Bgym");
                 exit();
-            }else{
+            } else {
                 $_SESSION['gagal'] = 'Kode verifikasi salah';
-                header("Location: index.php?action=register");
+                header("Location:register");
                 exit();
             }
         }
 
         // login
-        public function login($username, $password){
-            $user = $this->usermodel->verifyUser($username,$password);
+        public function login($username, $password)
+        {
+            $user = $this->usermodel->verifyUser($username, $password);
             if ($user) {
                 if ($user['isverif'] == 1) {
                     $_SESSION['user'] = $user;
@@ -82,34 +84,27 @@
                     $_SESSION['login_status'] = true;
                     $_SESSION['login']['level'] = $user['level'];
 
-                    switch ($user['level']) {
-                        case 'user':
-                            header("location: index.php?action=home");
-                            break;
-                        case 'admin':
-                            header("location: index.php?action=admin");
-                            break;
-                        case 'admin artikel':
-                            header("location: index.php?action=admin");
-                            break;
+                    // Redirect based on user level
+                    if ($user['level'] === 'admin' || $user['level'] === 'admin artikel') {
+                        header("Location: index.php?action=admin");
+                    } else {
+                        header("Location:/Bgym"); // Redirect user to index.php
                     }
                     exit();
-                }else{
+                } else {
                     $_SESSION['error'] = 'Email anda belum terverifikasi';
-                    header("Location: index.php?action=login");
+                    header("Location:login");
                     exit();
                 }
-            }else{
+            } else {
                 $_SESSION['error'] = 'Username or password incorrect.';
-                header("Location: index.php?action=login");
+                header("Location:login");
                 exit();
             }
-
         }
-        public function logout(){
-            header("location:index.php");
+        public function logout()
+        {
+            header("location:Bgym ");
             session_destroy();
         }
-
-        
     }

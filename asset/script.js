@@ -61,9 +61,9 @@ function validateForm() {
   return true; // Lanjutkan pengiriman formulir
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("myCartDropdownButton1").click();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.getElementById("myCartDropdownButton1").click();
+// });
 
 document.querySelectorAll(".harga").forEach(function (element) {
   let harga = parseInt(

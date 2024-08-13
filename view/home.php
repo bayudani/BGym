@@ -9,13 +9,13 @@ include './config/koneksi.php'
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <!-- <link rel="stylesheet" href="asset/output.css"> -->
     <link rel="stylesheet" href="./asset/output.css">
 
 
     <!-- Site Properties -->
-    <title>Brogym</title>
+    <title>Bgym</title>
 
 
     <link rel="stylesheet" href="./asset/swiper/swiper-bundle.min.css">
@@ -56,7 +56,7 @@ include './config/koneksi.php'
         <section class="overflow-hidden bg-[url(../asset/img/background.png)] bg-cover bg-top bg-no-repeat h-max">
             <div class="p-8 md:p-12 lg:px-16 lg:py-24">
                 <div class="mx-auto max-w-lg text-center">
-                    <h2 class="text-white md:text-5xl text-3xl font-bold mb-8">Selamat Datang di <span class="text-yellow-500">BayGym</span></h2>
+                    <h2 class="text-white md:text-5xl text-3xl font-bold mb-8">Selamat Datang di <span class="text-yellow-500">BGym</span></h2>
                     <p class="text-lg text-center text-gray-200 mb-10">Bangun Badan impian anda dengan Lebih menyenangkan</p>
                     <a href="index.php?action=login" class="mt-92 text-base font-semibold py-2.5 px-5   bg-rose-600  text-white transition focus:outline-none focus:ring focus:ring-yellow-400 rounded">
                         Get started
@@ -71,7 +71,7 @@ include './config/koneksi.php'
         <section class="bg-white dark:bg-black">
             <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                 <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="text-orange-600 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-6 md:!leading-[56px]"><span class="text-white line">Bangun</span> Badan Impian <span class="text-white">Anda</span> di BayGym</h2>
+                    <h2 class="text-orange-600 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-6 md:!leading-[56px]"><span class="text-white line">Bangun</span> Badan Impian <span class="text-white">Anda</span> di Bgym</h2>
                     <h4 class="text-white mt-6 text-2xl leading-relaxed">Mulai dari <span class="font-bold text-red-300	">Rp.200.000</span> </h4>
                     <p>Akses semua fasilitas yang di tawarkan</p>
                     <div class="mt-5">
@@ -107,8 +107,8 @@ include './config/koneksi.php'
 
         <div class="grid lg:grid-cols-2 items-center gap-10 my-4 bg-white lg:max-w-5xl max-w-xl mx-auto font-[sans-serif] p-4">
             <div class="max-lg:text-center">
-                <h2 class="text-gray-800 text-4xl max-sm:text-2xl font-extrabold mb-6">Kenapa harus BayGym?</h2>
-                <p class="text-gray-600 text-sm">BayGym mengerti bahwa kenyamanan adalah kunci untuk pengalaman fitness yang optimal. Oleh karena itu, kami menyediakan Beberapa fasilitas yang membuat pengalaman latihan anda nyaman.</p>
+                <h2 class="text-gray-800 text-4xl max-sm:text-2xl font-extrabold mb-6">Kenapa harus Bgym?</h2>
+                <p class="text-gray-600 text-sm">Bgym mengerti bahwa kenyamanan adalah kunci untuk pengalaman fitness yang optimal. Oleh karena itu, kami menyediakan Beberapa fasilitas yang membuat pengalaman latihan anda nyaman.</p>
             </div>
 
             <div class="grid sm:grid-cols-2 gap-2 mx-auto w-full">
@@ -117,7 +117,7 @@ include './config/koneksi.php'
                         <path d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
                     </svg>
                     <h3 class="text-gray-800 text-base font-bold mt-4 mb-2">Ruangan ber Ac</h3>
-                    <p class="text-gray-600 text-sm">Semua ruang latihan di BayGym dilengkapi dengan pendingin udara untuk memastikan Anda berlatih dengan nyaman di segala kondisi cuaca.</p>
+                    <p class="text-gray-600 text-sm">Semua ruang latihan di Bgym dilengkapi dengan pendingin udara untuk memastikan Anda berlatih dengan nyaman di segala kondisi cuaca.</p>
                 </div>
 
                 <div class="text-center hover:shadow-md transition-all duration-300 rounded-xl p-6 w-full">
@@ -149,7 +149,7 @@ include './config/koneksi.php'
                         <path d="M96 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 160 0 64 0 160c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-64-32 0c-17.7 0-32-14.3-32-32l0-64c-17.7 0-32-14.3-32-32s14.3-32 32-32l0-64c0-17.7 14.3-32 32-32l32 0 0-64zm448 0l0 64 32 0c17.7 0 32 14.3 32 32l0 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 64c0 17.7-14.3 32-32 32l-32 0 0 64c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-160 0-64 0-160c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32zM416 224l0 64-192 0 0-64 192 0z" />
                     </svg>
                     <h3 class="text-gray-800 text-base font-bold mt-4 mb-2">Alat yang lengkap</h3>
-                    <p class="text-gray-600 text-sm">Di BayGym, Anda akan menemukan fasilitas yang lengkap untuk memenuhi kebutuhan kebugaran Anda</p>
+                    <p class="text-gray-600 text-sm">Di Bgym, Anda akan menemukan fasilitas yang lengkap untuk memenuhi kebutuhan kebugaran Anda</p>
                 </div>
             </div>
         </div>
@@ -161,7 +161,7 @@ include './config/koneksi.php'
             <h2 class="text-gray-800 text-3xl font-extrabold text-center">Pilih Program Latihan Anda</h2>
             <div class="mt-16 space-y-10">
                 <?php foreach ($program as $programs) : ?>
-                    <a href="index.php?action=detail&id_program=<?php echo $programs['id_program']; ?>" class="grid md:grid-cols-2 gap-14">
+                    <a href="/Bgym/program/<?php echo $programs['id_program']; ?>" class="grid md:grid-cols-2 gap-14">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-10 mb-6 bg-gray-100 p-2 rounded-md"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                 <path d="M96 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 160 0 64 0 160c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-64-32 0c-17.7 0-32-14.3-32-32l0-64c-17.7 0-32-14.3-32-32s14.3-32 32-32l0-64c0-17.7 14.3-32 32-32l32 0 0-64zm448 0l0 64 32 0c17.7 0 32 14.3 32 32l0 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 64c0 17.7-14.3 32-32 32l-32 0 0 64c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-160 0-64 0-160c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32zM416 224l0 64-192 0 0-64 192 0z" />
@@ -210,14 +210,14 @@ include './config/koneksi.php'
                             </div>
                             <div class="mt-6">
                                 <h3 class="text-gray-900 text-4xl font-semibold harga">Rp.<?php echo $produks['harga']; ?></h3>
-                                <p class="text-gray-300 text-xs mt-1">1 Month</p>
+                                <p class="text-gray-900 text-xs mt-1"><?php echo $produks['masa berlaku'] ;?> hari</p>
                             </div>
                             <div class="mt-10">
                                 <?php if (isset($_SESSION['login_status']) && $_SESSION['login_status']) : ?>
 
                                     <a href="index.php?action=transaksi&id_produk=<?php echo $produks['id_produk']; ?>" class="font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 px-5 py-3">Join membership</a>
                                 <?php else : ?>
-                                    <a href="index.php?action=login" class="font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 px-5 py-3">Join membership</a>
+                                    <a href="login" class="font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 px-5 py-3">Join membership</a>
                                 <?php endif; ?>
                             </div>
                         </label>
@@ -297,7 +297,7 @@ include './config/koneksi.php'
                 </div>
                 <button class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] mt-6 mx-auto flex" type="button" data-ripple-dark="true">
 
-                    <a href="index.php?action=artikel" >
+                    <a href="artikel" >
                         Lihat selengkapnya
                     </a>
                 </button>
