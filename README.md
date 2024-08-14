@@ -12,7 +12,6 @@ Gym Management System adalah sebuah aplikasi berbasis web untuk manajemen gym, t
 Proyek ini dibangun menggunakan teknologi berikut:
 - [PHP](https://www.php.net/): Digunakan untuk pengembangan backend.
 - [Taillwind](https://semantic-ui.com/): Framework CSS untuk desain antarmuka.
-- [Composer](https://getcomposer.org/): Manajer dependensi untuk PHP.
 - [Midtrans](https://midtrans.com/): Payment gateway untuk transaksi pembayaran.
 - [PHPMailer](https://github.com/PHPMailer/PHPMailer): Library untuk mengirim email.
 - [Instascan](https://github.com/schmich/instascan): Library JavaScript untuk membaca QR code.
