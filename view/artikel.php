@@ -21,7 +21,7 @@
             <ul class="flex flex-wrap -mx-2 overflow-hidden">
                 <?php foreach ($artikel3 as $artikels) : ?>
                     <li class="my-2 px-2 w-full overflow-hidden md:w-1/3 lg:w-1/3 xl:w-1/3">
-                        <a href="index.php?action=detailArtikel&id_artikel=<?php echo $artikels['id_artikel']; ?>">
+                        <a href="artikel/<?php echo $artikels['id_artikel']; ?>/<?php echo urlencode(strtolower(str_replace(' ', '-', $artikels['judul']))); ?>">
                             <div class="mx-2 flex items-center justify-center bg-gray-300 bg-cover bg-center relative rounded overflow-hidden" style="height:400px; background-image:url(asset/image/<?php echo $artikels['foto']; ?>)">
                                 <div class="absolute w-full h-full bg-black z-10 opacity-50"></div>
                                 <div class="relative z-20 text-center p-5">
@@ -40,8 +40,8 @@
         <div class="flex flex-wrap overflow-hidden">
             <div class="w-full overflow-hidden md:w-4/6 lg:w-4/6 xl:w-4/6">
                 <div class="mr-2 md:mr-4 ml-2">
-                    <div class="pb-10">
-                        <!-- first post -->
+                    <!-- <div class="pb-10">
+                    
                         <div>
                             <img class="w-full h-auto rounded" src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=770&q=80" alt="">
                             <h2 class="text-gray-900 font-serif text-3xl my-5 font-thin"><a href="./article-details.html">How To Make More Travel By Doing Less</a></h2>
@@ -49,16 +49,16 @@
                             <p class="text-gray-900 font-thin tracking-wider leading-loose">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast...</p>
                             <a href="./article-details.html" class="inline-block pt-5 text-sm font-medium tracking-wider">Read More...</a>
                         </div>
-                    </div>
+                    </div> -->
                     <?php foreach (array_chunk($artikel, 2) as $row): ?>
                         <div class="flex flex-wrap overflow-hidden mb-10">
                             <?php foreach ($row as $index => $artikel): ?>
                                 <div class="w-1/2 overflow-hidden <?php echo $index === 0 ? 'pr-2 md:pr-4' : 'pl-2 md:pl-4'; ?>">
                                     <div>
                                         <img class="w-full h-auto rounded" src="asset/image/<?php echo $artikel['foto']; ?>" alt="">
-                                        <h2 class="text-gray-900 font-thin font-serif text-xl my-5"><a href="index.php?action=detailArtikel&id_artikel=<?php echo $artikel['id_artikel']; ?>"><?php echo $artikel['judul'] ?></a></h2>
+                                        <h2 class="text-gray-900 font-thin font-serif text-xl my-5"><a href="artikel/<?php echo $artikel['id_artikel']; ?>/<?php echo urlencode(strtolower(str_replace(' ', '-', $artikels['judul']))); ?>"><?php echo $artikel['judul'] ?></a></h2>
                                         <p class="text-gray-900 font-thin tracking-wider leading-loose"><?php echo $artikel['return']; ?></p>
-                                        <a href="index.php?action=detailArtikel&id_artikel=<?php echo $artikel['id_artikel']; ?>" class="inline-block pt-5 text-sm font-medium tracking-wider">Read More...</a>
+                                        <a href="artikel/<?php echo $artikel['id_artikel']; ?>/<?php echo urlencode(strtolower(str_replace(' ', '-', $artikels['judul']))); ?>" class="inline-block pt-5 text-sm font-medium tracking-wider">Read More...</a>
                                     </div>
                                 </div>
                                 <!-- <div class="w-1/2 overflow-hidden pl-2 md:pl-4">
@@ -163,7 +163,7 @@
 
                             <?php foreach ($new as $news): ?>
                                 <li class="mb-3">
-                                    <a href="detailartikel/<?php echo $news['id_artikel']; ?>" class="flex">
+                                    <a href="artikel/<?php echo $news['id_artikel']; ?>/<?php echo urlencode(strtolower(str_replace(' ', '-', $artikels['judul']))); ?>" class="flex">
                                         <div class="w-1/3">
                                             <img class="rounded" src="asset/image/<?php echo $news['foto']; ?>" alt="artikel">
                                         </div>

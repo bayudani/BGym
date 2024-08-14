@@ -4,7 +4,7 @@ self.addEventListener("install", function (event) {
             return cache.addAll([
                 
                 "index.php",
-                
+                // ".htaccess",
                 // "asset/image/404_benchpress.jpg",
                 "asset/image/455_nutrisi1.jpg",
                 "asset/image/561_gymcwe.jpeg",

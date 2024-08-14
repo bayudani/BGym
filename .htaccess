@@ -1,9 +1,13 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Aturan untuk detail artikel berdasarkan ID
-    RewriteRule ^detailartikel/([0-9]+)$ index.php?action=detailArtikel&id_artikel=$1 [QSA,L]
-    RewriteRule ^detailProgram/([0-9]+)$ index.php?action=detail&id_program=$1 [QSA,L]
+    # Aturan untuk detail artikel,program dan produk berdasarkan ID
+    # RewriteRule ^detailartikel/([0-9]+)$ index.php?action=detailArtikel&id_artikel=$1 [QSA,L]
+    RewriteRule ^program/([0-9]+)/([a-zA-Z0-9_-]+)$ index.php?action=detail&id_program=$1 [QSA,L]
+    RewriteRule ^artikel/([0-9]+)/([a-zA-Z0-9_-]+)$ index.php?action=detailArtikel&id_artikel=$1 [QSA,L]
+    # RewriteRule ^transaksi/([0-9]+)/([a-zA-Z0-9_-]+)$ index.php?action=transaksi&id_produk=$1 [QSA,L]
+    # index.php?action=transaksi&id_produk=<?php echo $produks['id_produk']; ?>
+    # index.php?action=detailArtikel&id_artikel=<?php echo $artikels['id_artikel']; ?>
 
     # Aturan untuk menangani request ke halaman lainnya (login, register, dll.)
     RewriteRule ^login$ index.php?action=login [QSA,L]
@@ -17,6 +21,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
+
+    RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|ico|json)$ [NC]
+
 
     # Aturan default untuk menangani semua permintaan lainnya
     RewriteCond %{REQUEST_FILENAME} !-f

@@ -15,14 +15,14 @@
         <div class="flex flex-wrap -mx-2 overflow-hidden px-5 lg:px-2 my-2">
 
             <div class="px-2 w-full overflow-hidden md:w-1/6 lg:w-1/3 xl:w-1/3 text-center md:text-left">
-                <h1 class="font-bold text-2xl font-serif">Baygym artikel</h1>
+                <h1 class="font-bold text-2xl font-serif">BGym artikel</h1>
             </div>
 
             <nav class="my-2 px-2 w-full overflow-hidden md:w-3/6 lg:w-1/3 xl:w-1/3 text-center md:text-left">
                 <ul>
-                    <li class="inline-block"><a class="block font-semibold px-3" href="index.php">Home</a></li>
-                    <li class="inline-block"><a class="block font-semibold px-3" href="./categories.html">Categories</a></li>
-                    <li class="inline-block"><a class="block font-semibold px-3" href="./about.html">About</a></li>
+                    <li class="inline-block"><a class="block font-semibold px-3" href="/Bgym">Home</a></li>
+                    <li class="inline-block"><a class="block font-semibold px-3" href="">Categories</a></li>
+                    <li class="inline-block"><a class="block font-semibold px-3" href="">About</a></li>
                 </ul>
             </nav>
 

@@ -21,13 +21,15 @@ function fnView() {
   const eyeIcon = document.getElementById("btnView");
 
   if (passwordField.value.length > 0 && passwordField.type === "password") {
-      passwordField.type = "text";
-      eyeIcon.innerHTML = '<i class="fa-regular fa-eye w-[18px] h-[18px] absolute right-4 cursor-pointer  "></i>';
-      eyeIcon.title = 'sembunyikan password';
+    passwordField.type = "text";
+    eyeIcon.innerHTML =
+      '<i class="fa-regular fa-eye w-[18px] h-[18px] absolute right-4 cursor-pointer  "></i>';
+    eyeIcon.title = "sembunyikan password";
   } else {
-      passwordField.type = "password";
-      eyeIcon.innerHTML = '<i class="fa-regular fa-eye-slash w-[18px] h-[18px] absolute right-4 cursor-pointer"></i>';
-      eyeIcon.title = 'lihat password';
+    passwordField.type = "password";
+    eyeIcon.innerHTML =
+      '<i class="fa-regular fa-eye-slash w-[18px] h-[18px] absolute right-4 cursor-pointer"></i>';
+    eyeIcon.title = "lihat password";
   }
 }
 
@@ -79,3 +81,7 @@ document.querySelectorAll(".harga").forEach(function (element) {
     element.innerText = formattedHarga;
   }
 });
+
+// validasi transaksi
+
+

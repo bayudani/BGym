@@ -113,7 +113,7 @@ class User
                     <div class="container">
                         <h1>Hai, ' . $username . '!</h1>
                         <p>Terimakasih sudah mendaftar di Bgym. Mohon verifikasi akun Anda dengan mengklik tombol di bawah ini:</p>
-                        <a href=" https://2c79-180-94-12-255.ngrok-free.app/Bgym/index.php?action=verify&code=' . $code_verif . '" class="button">Verifikasi Akun</a>
+                        <a href="http://localhost/Bgym/index.php?action=verify&code=' . $code_verif . '" class="button">Verifikasi Akun</a>
                         <p>Jika Anda tidak merasa mendaftar, abaikan email ini.</p>
                         <p>Salam,<br>Tim Bgym</p>
                     </div>

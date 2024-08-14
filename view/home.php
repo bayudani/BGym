@@ -12,6 +12,7 @@ include './config/koneksi.php'
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <!-- <link rel="stylesheet" href="asset/output.css"> -->
     <link rel="stylesheet" href="./asset/output.css">
+    <link rel="stylesheet" href="./asset/aos/aos.css">
 
 
     <!-- Site Properties -->
@@ -56,11 +57,17 @@ include './config/koneksi.php'
         <section class="overflow-hidden bg-[url(../asset/img/background.png)] bg-cover bg-top bg-no-repeat h-max">
             <div class="p-8 md:p-12 lg:px-16 lg:py-24">
                 <div class="mx-auto max-w-lg text-center">
-                    <h2 class="text-white md:text-5xl text-3xl font-bold mb-8">Selamat Datang di <span class="text-yellow-500">BGym</span></h2>
+                    <h2 class="text-white md:text-5xl text-3xl font-bold mb-8">Selamat Datang di <span class="text-orange-600">BGym</span></h2>
                     <p class="text-lg text-center text-gray-200 mb-10">Bangun Badan impian anda dengan Lebih menyenangkan</p>
-                    <a href="index.php?action=login" class="mt-92 text-base font-semibold py-2.5 px-5   bg-rose-600  text-white transition focus:outline-none focus:ring focus:ring-yellow-400 rounded">
-                        Get started
-                    </a>
+                    <?php if (isset($_SESSION['login_status']) && $_SESSION['login_status']) : ?>
+                        <p class="mt-92 text-xl font-semibold py-2.5 px-5    text-white transition focus:outline-none focus:ring focus:ring-yellow-400 rounded">
+                            Hallo <span id="auto-input"></span>
+                        </p>
+                    <?php else : ?>
+                        <a href="login" class="mt-92 text-base font-semibold py-2.5 px-5   bg-rose-600  text-white transition focus:outline-none focus:ring focus:ring-yellow-400 rounded">
+                            Get started
+                        </a>
+                    <?php endif; ?>
                 </div>
 
             </div>
@@ -75,7 +82,7 @@ include './config/koneksi.php'
                     <h4 class="text-white mt-6 text-2xl leading-relaxed">Mulai dari <span class="font-bold text-red-300	">Rp.200.000</span> </h4>
                     <p>Akses semua fasilitas yang di tawarkan</p>
                     <div class="mt-5">
-                        <a href="#" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                        <a href="#membership" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                             Join membership
                             <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -161,7 +168,7 @@ include './config/koneksi.php'
             <h2 class="text-gray-800 text-3xl font-extrabold text-center">Pilih Program Latihan Anda</h2>
             <div class="mt-16 space-y-10">
                 <?php foreach ($program as $programs) : ?>
-                    <a href="/Bgym/program/<?php echo $programs['id_program']; ?>" class="grid md:grid-cols-2 gap-14">
+                    <a href="program/<?php echo $programs['id_program']; ?>/<?php echo urlencode(strtolower(str_replace(' ', '-', $programs['nama']))); ?>" class="grid md:grid-cols-2 gap-14">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="w-10 mb-6 bg-gray-100 p-2 rounded-md"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                 <path d="M96 64c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 160 0 64 0 160c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-64-32 0c-17.7 0-32-14.3-32-32l0-64c-17.7 0-32-14.3-32-32s14.3-32 32-32l0-64c0-17.7 14.3-32 32-32l32 0 0-64zm448 0l0 64 32 0c17.7 0 32 14.3 32 32l0 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 64c0 17.7-14.3 32-32 32l-32 0 0 64c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-160 0-64 0-160c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32zM416 224l0 64-192 0 0-64 192 0z" />
@@ -180,11 +187,11 @@ include './config/koneksi.php'
         </div>
 
         <!-- membership -->
-        <section class="mt-10">
+        <section class="mt-10" id="membership">
             <div class="max-w-7xl max-sm:max-w-md mx-auto p-4 font-[sans-serif]">
                 <div class="text-center">
                     <h2 class="text-black text-3xl font-bold mb-4">Join membership sekarang</h2>
-                    <p class="text-slate-500 text-sm">Change your plant according your needs</p>
+                    <p class="text-slate-500 text-sm">Pilih paket membership yang sesuai dengan anda</p>
                 </div>
 
                 <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-8 mt-16">
@@ -210,11 +217,10 @@ include './config/koneksi.php'
                             </div>
                             <div class="mt-6">
                                 <h3 class="text-gray-900 text-4xl font-semibold harga">Rp.<?php echo $produks['harga']; ?></h3>
-                                <p class="text-gray-900 text-xs mt-1"><?php echo $produks['masa berlaku'] ;?> hari</p>
+                                <p class="text-gray-900 text-xs mt-1"><?php echo $produks['masa berlaku']; ?> hari</p>
                             </div>
                             <div class="mt-10">
                                 <?php if (isset($_SESSION['login_status']) && $_SESSION['login_status']) : ?>
-
                                     <a href="index.php?action=transaksi&id_produk=<?php echo $produks['id_produk']; ?>" class="font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 px-5 py-3">Join membership</a>
                                 <?php else : ?>
                                     <a href="login" class="font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 px-5 py-3">Join membership</a>
@@ -223,53 +229,6 @@ include './config/koneksi.php'
                         </label>
                     <?php endforeach; ?>
                 </div>
-                <!-- <div class="mt-12">
-                    <h4 class="text-gray-800 text-xl font-bold mb-4"><span class="text-blue-500">Premium</span> Plan Includes</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-center text-sm text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" class="mr-4 fill-green-500" viewBox="0 0 24 24">
-                                <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" data-original="#000000" />
-                            </svg>
-                            50 Image generations
-                        </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" class="mr-4 fill-green-500" viewBox="0 0 24 24">
-                                <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" data-original="#000000" />
-                            </svg>
-                            500 Credits
-                        </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" class="mr-4 fill-green-500" viewBox="0 0 24 24">
-                                <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" data-original="#000000" />
-                            </svg>
-                            Monthly 100 Credits Free
-                        </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" class="mr-4 fill-green-500" viewBox="0 0 24 24">
-                                <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" data-original="#000000" />
-                            </svg>
-                            Customer Support
-                        </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" class="mr-4 fill-green-500" viewBox="0 0 24 24">
-                                <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" data-original="#000000" />
-                            </svg>
-                            Dedicated Server
-                        </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" class="mr-4 fill-green-500" viewBox="0 0 24 24">
-                                <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" data-original="#000000" />
-                            </svg>
-                            Priority Generations
-                        </li>
-                        <li class="flex items-center text-sm text-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" class="mr-4 fill-green-500" viewBox="0 0 24 24">
-                                <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" data-original="#000000" />
-                            </svg>
-                            50GB Cloud Storage
-                        </li>
-                    </ul>
-                </div> -->
             </div>
 
         </section>
@@ -286,7 +245,7 @@ include './config/koneksi.php'
                             <img src="asset/image/<?php echo $artikels['foto']; ?>" alt="Blog Post 1" class="w-full h-96 object-cover" />
                             <div class="p-6 absolute bottom-0 left-0 right-0 bg-white opacity-90">
                                 <span class="text-sm block text-gray-600 mb-2"><?php echo $artikels['formatted_date']; ?></span>
-                                <a href="index.php?action=detailArtikel&id_artikel=<?php echo $artikels['id_artikel']; ?>" class="text-xl font-bold text-[#333]"><?php echo $artikels['judul']; ?></a>
+                                <a href="artikel/<?php echo $artikels['id_artikel']; ?>/<?php echo urlencode(strtolower(str_replace(' ', '-', $artikels['judul']))); ?>" class="text-xl font-bold text-[#333]"><?php echo $artikels['judul']; ?></a>
                                 <div class="h-0 overflow-hidden group-hover:h-16 group-hover:mt-4 transition-all duration-300">
                                     <p class="text-gray-600 text-sm"><?php echo  $artikels['excerpt']; ?></p>
                                 </div>
@@ -297,7 +256,7 @@ include './config/koneksi.php'
                 </div>
                 <button class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-gray-900 text-gray-900 hover:opacity-75 focus:ring focus:ring-gray-300 active:opacity-[0.85] mt-6 mx-auto flex" type="button" data-ripple-dark="true">
 
-                    <a href="artikel" >
+                    <a href="artikel">
                         Lihat selengkapnya
                     </a>
                 </button>
@@ -305,7 +264,7 @@ include './config/koneksi.php'
         </div>
 
 
-       
+
 
         <?php
         include 'layout/footer.php';
@@ -332,6 +291,32 @@ include './config/koneksi.php'
         <?php unset($_SESSION['berhasil']);
         } ?>
 
+<?php if (@$_SESSION['error']) { ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops!!',
+                text: '<?php echo $_SESSION['error']; ?>',
+            })
+        </script>
+    <?php unset($_SESSION['error']);
+    } ?>
+    
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+        <?php if (isset($_SESSION['login_status']) && $_SESSION['login_status']) : ?>
+        <script>
+            let typed = new Typed("#auto-input", {
+                strings: ["<?php echo $_SESSION['username'] ?>"],
+                typeSpeed: 90,
+                backSpeed: 20,
+                fadeOut: true,
+                loop: true
+            })
+        </script>
+        <?php endif;?>
+        <!-- aos -->
+        <script src="./asset/aos/aos.js"></script>
 </body>
 
 </html>

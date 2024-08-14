@@ -23,6 +23,9 @@ echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 echo '<meta name="description" content="ByGym.">';
 // Tambahkan link ke manifest.json
 echo '<link rel="manifest" href="manifest.json">';
+echo '<link rel="stylesheet" href="asset/output.css">';
+echo '<script src="//code.tidio.co/ssuqebbzks3r9bon2ysdl0iothhzbx02.js" async></script>';
+// echo '<https://unpkg.com/aos@next/dist/aos.css>';
 echo '<meta name="theme-color" content="#317EFB"/>';
 echo '<title>Bgym</title>';
 echo '</head>';
@@ -134,6 +137,8 @@ echo '    });';
 echo '  });';
 echo '}';
 echo '</script>';
+
+echo '<script src="asset/script.js"></script>';
 
 echo '</body>';
 echo '</html>';
