@@ -38,7 +38,7 @@ Pastikan Anda sudah menginstal:
 
 1. **Clone Repository**
    ```sh
-   git clone https://github.com/bayu dani/BroGym.git
+   https://github.com/bayudani/BGym.git
    
 2. **Install Depedensi PHP**
    ```sh
